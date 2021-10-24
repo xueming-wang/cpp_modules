@@ -12,13 +12,9 @@
 
 #include "contact.hpp"
 
-contact::contact() {
-    return;
-};
+contact::contact() {};
 
-contact::~contact() {
-    return;
-};
+contact::~contact() {};
 
 void contact::clear_info() {
     

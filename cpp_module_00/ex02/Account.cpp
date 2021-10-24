@@ -9,7 +9,8 @@
 /*   Updated: 2021/10/21 18:45:18 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+#include <ctime>
+#include <iostream>
 //在C++中，我们可以使用静态成员变量来实现多个对象共享数据的目标，就像全局变量
 //static 属于；类 不属于莫一个对象 分配一份内存 所有对象使用的都是这份内存中的数据
 //当某个对象修改了 m_total，也会影响到其他对象。静态成员变量在初始化时不能再加 static 
@@ -42,4 +43,48 @@
 //。引用必须在定义的同时初始化，并且以后也要从一而终，不能再引用其它数据，这有点类似于常量（const 变量）。
 //避免复制避免空指针 传参的时候不是拷贝，节省了资源，而且速度快。 代替指针使用的
 //函数的参数和返回类型。本质就是别名，所有对他的操作都会实施在‘本体’上
+Account( void ){}
+~Account( void ) {}
+/*init static must be out of class*/
+int _nbAccounts = 0;
+int _totalAmount = 0;
+int _totalNbDeposits = 0;
+int _totalNbWithdrawals = 0;
+Account( int initial_deposit ){
 
+}
+
+static int	Account::getNbAccounts( void ){
+    return this->_nbAccounts;
+}
+static int	Account::getTotalAmount( void ){
+    return this->_totalAmount;
+}
+static int	Account::getNbDeposits( void ){
+    return this->_totalNbDeposits;
+}
+static int	Account::getNbWithdrawals( void ){
+    return this->_totalNbWithdrawals;
+}
+static void	Account::displayAccountsInfos( void ){
+
+}
+void	makeDeposit( int deposit ){
+
+}
+bool	makeWithdrawal( int withdrawal ){
+
+}
+int		checkAmount( void ) const{
+
+}
+void	displayStatus( void ) const{
+
+}
+static void	_displayTimestamp( void ){
+
+}
+int main()
+{
+    Account()
+}
