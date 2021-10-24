@@ -93,15 +93,15 @@
 //         static int _nbinst;
 // };
 /* poiter *************************************************************************/
-class Sample {
+// class Sample {
     
-    public:
+//     public:
 
-        int foo;
-        Sample (void);
-        ~Sample (void);
+//         int foo;
+//         Sample (void);
+//         ~Sample (void);
 
-    void bar(void)const;
-};
+//     void bar(void)const;
+// };
 
 #endif

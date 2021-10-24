@@ -6,13 +6,44 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 18:06:32 by xuwang            #+#    #+#             */
-/*   Updated: 2021/10/18 15:39:30 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/10/24 19:31:19 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "text.hpp"
-
+//在C++中，我们可以使用静态成员变量来实现多个对象共享数据的目标，就像全局变量
+//static 属于；类 不属于莫一个对象 分配一份内存 所有对象使用的都是这份内存中的数据
+//当某个对象修改了 m_total，也会影响到其他对象。静态成员变量在初始化时不能再加 static 
+//static 成员变量的内存既不是在声明类时分配，也不是在创建对象时分配，而是在（类外）初始化时分配。
+//反过来说，没有在类外初始化的 static 成员变量不能使用。
+// static 成员变量既可以通过对象来访问，也可以通过类来访问。请看下面的例子：
+// //通过类类访问 static 成员变量
+// Student::m_total = 10;
+// //通过对象来访问 static 成员变量
+// Student stu();
+// stu.m_total = 20;
+// //通过对象指针来访问 static 成员变量
+// Student *pstu = new Student();
+// pstu -> m_total = 20;
+// 这三种方式是等效的。
+//初始化时可以赋初值，也可以不赋值。如果不赋值，那么会被默认初始化为 0
+//引用就是某一变量（目标）的一个别名，
+//对引用的操作与对变量直接操作完全一样。引用的声明方法：类型标识符 &引用名=目标变量名；
+//&在此不是求地址运算，而是起标识作用。
+//int a=2,&ra=a;
+//a为目标原名称，ra为目标引用名。给ra赋值：ra=1; 等价于 a=1;
+//（5）对引用求地址，就是对目标变量求地址。&ra与&a相等。
+// 不能建立引用的数组。因为数组是一个由若干个元素所组成的集合，
+// 所以无法建立一个由引用组成的集合。但是可以建立数组的引用.
+// 不存在空引用。引用必须连接到一块合法的内存。
+// 一旦引用被初始化为一个对象，就不能被指向到另一个对象。指针可以在任何时候指向到另一个对象。
+// 引用必须在创建时被初始化。指针可以在任何时间被初始化。
+//但是在 C++ 中，我们有了一种比指针更加便捷的传递聚合类型数据的方式，那就是引用（Reference）。
+//引用可以看做是数据的一个别名，通过这个别名和原来的名字都能够找到这份数据
+//。引用必须在定义的同时初始化，并且以后也要从一而终，不能再引用其它数据，这有点类似于常量（const 变量）。
+//避免复制避免空指针 传参的时候不是拷贝，节省了资源，而且速度快。 代替指针使用的
+//函数的参数和返回类型。本质就是别名，所有对他的操作都会实施在‘本体’上
 //cpp 就是 c文件  hpp 是 h文件
 //read( STDIN_FILENO,buf,SIZE))   //读取标准输里的数，返回读取字节数。
 //write( STDOUT_FILENO,buf,n)) 把buf 写到标准输出中
@@ -383,43 +414,43 @@
 // 解散
 // nb of instance: 0
 /* poiters *******************************************************************************************/
-Sample::Sample(void): foo(0) {
-    std::cout << "创建" << std::endl;
-    return;
-}
- Sample::~Sample(void) {
+// Sample::Sample(void): foo(0) {
+//     std::cout << "创建" << std::endl;
+//     return;
+// }
+//  Sample::~Sample(void) {
     
-    std::cout << "解散" << std::endl;
-    return;
-}
+//     std::cout << "解散" << std::endl;
+//     return;
+// }
 
-void Sample::bar(void) const {
-     std::cout << "Member function bar called" << std::endl;
-     return;
-}
+// void Sample::bar(void) const {
+//      std::cout << "Member function bar called" << std::endl;
+//      return;
+// }
 
-int main() {
-    Sample instance; 
-    Sample *instancep = &instance;//把第一个地址给instancep
+// int main() {
+//     Sample instance; 
+//     Sample *instancep = &instance;//把第一个地址给instancep
 
-    int Sample::*p =NULL; //两个都有创建p
-    void (Sample::*f)(void) const;//两个都创建 f
+//     int Sample::*p =NULL; //两个都有创建p
+//     void (Sample::*f)(void) const;//两个都创建 f
 
-    p = &Sample::foo; //p = samplefoo(0)的地址
+//     p = &Sample::foo; //p = samplefoo(0)的地址
 
-    std::cout << "Value foo: " << instance.foo << std::endl;// foo 是0；
-    instance.*p = 21;     //给p的值是21
-    std::cout << "Value foo: " << instance.foo << std::endl;// foo这个地址的值改变成21
-    instancep->*p = 42;  //给p的值是21
-    std::cout << "Value foo: " << instance.foo << std::endl;
+//     std::cout << "Value foo: " << instance.foo << std::endl;// foo 是0；
+//     instance.*p = 21;     //给p的值是21
+//     std::cout << "Value foo: " << instance.foo << std::endl;// foo这个地址的值改变成21
+//     instancep->*p = 42;  //给p的值是21
+//     std::cout << "Value foo: " << instance.foo << std::endl;
 
-    f = &Sample::bar; //把bar地址给f
+//     f = &Sample::bar; //把bar地址给f
 
-    (instance.*f)(); //运行f就是运行bar 
-    (instancep->*f)(); 
+//     (instance.*f)(); //运行f就是运行bar 
+//     (instancep->*f)(); 
 
-    return 0;
-}
+//     return 0;
+// }
 // 创建
 // Value foo: 0
 // Value foo: 21
@@ -427,3 +458,24 @@ int main() {
 // Member function bar called
 // Member function bar called
 // 解散
+#include <cstdio>
+#include <iostream>
+#include <ctime>
+int main( )
+{
+   // 基于当前系统的当前日期/时间
+   time_t now = time(0);
+ 
+   std::cout << "1970 到目前经过秒数:" << now << std::endl;
+ 
+   tm *ltm = localtime(&now);
+ 
+   // 输出 tm 结构的各个组成部分
+   std::cout << "年: "<< 1900 + ltm->tm_year << std::endl;
+   std::cout << "月: "<< 1 + ltm->tm_mon<< std::endl;
+   std::cout << "日: "<<  ltm->tm_mday << std::endl;
+   std::cout << "时间: "<< ltm->tm_hour << ":";
+   std::cout << ltm->tm_min << ":";
+   std::cout << ltm->tm_sec << std::endl;
+   return (0);
+}
