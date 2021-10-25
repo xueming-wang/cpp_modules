@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 17:26:29 by xuwang            #+#    #+#             */
-/*   Updated: 2021/10/21 17:29:00 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/10/25 15:55:26 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,11 @@ class contact {
         std::string   get_phone_number(void)const;
         std::string   get_darkest_secret(void)const;
     
-        void    set_first_name(std::string &str);
-        void    set_last_name(std::string &str);
-        void    set_nickname(std::string &str);
-        void    set_phone_number(std::string &str);
-        void    set_darkest_secret(std::string &str);
+        void    set_first_name(const std::string &str);
+        void    set_last_name(const std::string &str);
+        void    set_nickname(const std::string &str);
+        void    set_phone_number(const std::string &str);
+        void    set_darkest_secret(const std::string &str);
         
         void clear_info(void);
         bool info_is_empty(void);

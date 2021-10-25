@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 16:04:33 by xuwang            #+#    #+#             */
-/*   Updated: 2021/10/21 17:30:39 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/10/25 15:55:01 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,27 +25,27 @@ void contact::clear_info() {
     this->darkest_secret.clear();
 };
 //set string 
-void  contact::set_first_name(std::string &str) {
+void  contact::set_first_name(const std::string &str) {
     this->first_name =str;
 }
    
 
-void  contact::set_last_name(std::string &str) {
+void  contact::set_last_name(const std::string &str) {
     this->last_name=str;
    
 };
 
-void  contact::set_nickname(std::string &str) {
+void  contact::set_nickname(const std::string &str) {
     this->nickname =str;
     
 };
 
-void  contact::set_phone_number(std::string &str) {
+void  contact::set_phone_number(const std::string &str) {
     this->phone_number =str;
     
 };
 
-void  contact::set_darkest_secret(std::string &str) {
+void  contact::set_darkest_secret(const std::string &str) {
     this->darkest_secret =str;
     
 };
