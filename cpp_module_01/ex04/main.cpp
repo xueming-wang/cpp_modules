@@ -6,12 +6,13 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/26 17:55:35 by xuwang            #+#    #+#             */
-/*   Updated: 2021/10/26 18:50:46 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/10/26 19:04:33 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <fstream> //INPUT OUTPUT
+#include <string>
 
 int main(int ac, char **av) {
 
@@ -26,18 +27,19 @@ std::string s2 = av[3];
 std::string replacefile = filename + ".repalce";
 
 std::ifstream ifs(filename); //open file
-if (!ifs) //check file
-{
+if (!ifs) { //check file 
     std::cout << "open [" << filename << "] failed !" << std::endl;
     return ;
 }
 std::ofstream ofs(replacefile); //Create a file and write newfile
-if (!ofs) //check file
-{
+if (!ofs) { //check file 
     std::cout << "open [" << replacefile << "] failed !" << std::endl;
     return;
 }
-
+int pos;
+while (true) {
+    pos = ifs.find(s1);
+}
 
 ofs << s2 << std::endl; //wite s2 replace s1
 
