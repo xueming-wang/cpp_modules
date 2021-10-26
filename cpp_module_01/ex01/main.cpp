@@ -13,12 +13,12 @@
 #include "Zombie.hpp"
 
 int main() {
+    Zombie *zombie_horde = zombieHorde(5, "xuwang");
     
-    Zombie *zombie = zombieHorde(5, "zombie1");
     for(int i = 0; i < 5; i++) {
         std::cout << "Zombie [ " << i << " ]";
-        zombie[i].announce(); 
+        zombie_horde[i].announce(); 
     }
-    delete[] zombie;
+    delete[] zombie_horde;
     return (0);    
 }
