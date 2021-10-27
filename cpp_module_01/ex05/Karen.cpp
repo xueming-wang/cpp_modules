@@ -6,14 +6,15 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/27 16:42:35 by xuwang            #+#    #+#             */
-/*   Updated: 2021/10/27 19:30:35 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/10/27 19:41:21 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Karen.hpp"
 
-// void (Karen::*complain[4])(void) {  //参数 返回值
-//     complain[0] = Karen::debug;
+// void (Karen::*complain)(void) {  //参数 返回值
+
+//     complain = Karen::debug;
 //     complain[1] = &Karen::info;
 //     complain[2] = &Karen::warnin;
 //     complain[3] = &Karen::error;
