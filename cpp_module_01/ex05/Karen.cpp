@@ -6,14 +6,23 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/27 16:42:35 by xuwang            #+#    #+#             */
-/*   Updated: 2021/10/27 17:22:20 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/10/27 19:30:35 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Karen.hpp"
 
-Karen::Karen(/* args */) {
+// void (Karen::*complain[4])(void) {  //参数 返回值
+//     complain[0] = Karen::debug;
+//     complain[1] = &Karen::info;
+//     complain[2] = &Karen::warnin;
+//     complain[3] = &Karen::error;
     
+//     return ;
+// }
+
+Karen::Karen() {
+    return;
 }
 
 Karen:: ~Karen() {
@@ -42,7 +51,17 @@ void Karen::error(void) {
 
 
 void Karen::complain(std::string level) {
-    std::string level[4];
+
+   
+    
+    for(int i = 0; i < 4; i++){
+        if (complain[i] == level) {
+            this->*complain[i]();
+            std::cout << std::endl;
+			return ;
+        }
+    }
+    //levelPtr = level;
     
         
 
