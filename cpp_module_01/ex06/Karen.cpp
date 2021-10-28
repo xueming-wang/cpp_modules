@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/27 16:43:01 by xuwang            #+#    #+#             */
-/*   Updated: 2021/10/28 17:54:11 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/10/28 17:59:48 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,19 +22,22 @@ Karen:: ~Karen() {
 
 void	Karen::debug(void) {
     std::cout << "[ DEBUG ]" << std::endl;
-	std::cout << "I love to get extra bacon for my 7XL-double-cheese-triple-pickle-special-ketchup burger. I just love it!";
+	std::cout << "I love to get extra bacon for my 7XL-double-cheese-triple-pickle-special-ketchup burger. " << std::endl;
+    std::cout << "I just love it!";
 	std::cout << std::endl << std::endl;
 }
 
 void	Karen::info(void) {
     std::cout << "[ INFO ]" << std::endl;
-	std::cout << "I cannot believe adding extra bacon cost more money. You don’t put enough! If you did I would not have to ask for it!";
+	std::cout << "I cannot believe adding extra bacon cost more money. " << std::endl;
+    std::cout << "You don’t put enough! If you did I would not have to ask for it!";
 	std::cout << std::endl << std::endl;
 }
 
 void	Karen::warning(void) {
     std::cout << "[ WARNING ]" << std::endl;
-	std::cout << "I think I deserve to have some extra bacon for free. I’ve been coming here for years and you just started working here last month.";
+	std::cout << "I think I deserve to have some extra bacon for free. " << std::endl;
+    std::cout << "I’ve been coming here for years and you just started working here last month.";
 	std::cout << std::endl << std::endl;
 }
 
