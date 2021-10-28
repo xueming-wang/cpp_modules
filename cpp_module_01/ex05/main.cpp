@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/27 16:42:41 by xuwang            #+#    #+#             */
-/*   Updated: 2021/10/28 14:35:47 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/10/28 15:13:42 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,11 @@
 int main() {
 
 	Karen karen;
-	karen.complain();
+	karen.complain("DEBUG");
+	karen.complain("INFO");
+
+	karen.complain("WARNING");
+	karen.complain("ERROR");
 	
     // void (*ptr)() = debug;
 	// ptr();
