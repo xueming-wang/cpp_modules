@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/27 16:59:51 by xuwang            #+#    #+#             */
-/*   Updated: 2021/10/27 19:35:39 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/10/28 14:55:42 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,13 @@ class Karen {
         void warning(void);
         void error(void);
     
-        void (Karen::*complain[4])(void); //function pointeur 有指针的函数 调用其他函数
+         void (Karen::*_complain)(void); //function pointeur is not fonction 
     
     public:
         Karen(void);
         ~Karen(void);
         
-    void complain(std::string level);
+        void complain(void);
 };
 
 

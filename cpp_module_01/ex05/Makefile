@@ -6,7 +6,7 @@
 #    By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/27 16:42:58 by xuwang            #+#    #+#              #
-#    Updated: 2021/10/27 16:46:45 by xuwang           ###   ########.fr        #
+#    Updated: 2021/10/28 14:18:17 by xuwang           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,8 @@ CC 		= clang++
 CFLAGS 	= -Wall -Wextra -Werror -std=c++98
 
 NAME 	:= karen
-SRCS    := main.cpp
+SRCS    := main.cpp \
+			Karen.cpp
 
 OBJS := $(SRCS:%.cpp=%.o)
 

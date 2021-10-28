@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/27 16:42:35 by xuwang            #+#    #+#             */
-/*   Updated: 2021/10/27 19:41:21 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/10/28 14:55:20 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 // void (Karen::*complain)(void) {  //参数 返回值
 
-//     complain = Karen::debug;
-//     complain[1] = &Karen::info;
-//     complain[2] = &Karen::warnin;
-//     complain[3] = &Karen::error;
+//     // complain = Karen::debug;
+//     // complain[1] = &Karen::info;
+//     // complain[2] = &Karen::warnin;
+//     // complain[3] = &Karen::error;
     
 //     return ;
 // }
@@ -51,19 +51,25 @@ void Karen::error(void) {
 }
 
 
-void Karen::complain(std::string level) {
 
+void Karen::complain() {
+
+
+    _complain = &Karen::debug;
+            (this->*_complain)();
+    // _complain = &Karen::debug;
+    // _complain = &Karen::debug;
+    // _complain();
+   // _complain();
+    
    
-    
-    for(int i = 0; i < 4; i++){
-        if (complain[i] == level) {
-            this->*complain[i]();
-            std::cout << std::endl;
-			return ;
-        }
-    }
-    //levelPtr = level;
-    
-        
+    // for(int i = 0; i < 4; i++){
+    //     if (complain[i] == level) {
+    //         this->*complain[i]();
+    //         std::cout << std::endl;
+	// 		return ;
+    //     }
+    // }
+    // levelPtr = level;
 
 }
