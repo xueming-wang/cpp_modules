@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/27 16:59:51 by xuwang            #+#    #+#             */
-/*   Updated: 2021/10/28 15:08:30 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/10/28 15:51:59 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ class Karen {
         ~Karen(void);
         
         void complain(std::string level);
+        
 };
 
 
