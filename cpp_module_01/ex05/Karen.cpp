@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/27 16:42:35 by xuwang            #+#    #+#             */
-/*   Updated: 2021/10/28 15:13:57 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/10/28 15:23:46 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,21 +60,31 @@ void Karen::complain(std::string level) {
           _complain[3] = &Karen::error;
     
     std::string leVel[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
-    if (level == leVel[0]) {
-        std::cout << "DEBUG" << std::endl;
-        (this->*_complain[0])();
-    }
-    else if (level == leVel[1]) {
-         std::cout << "INFO" << std::endl;
-         (this->*_complain[1])();
-    }
-     else if  (level == leVel[2]){
-          std::cout << "WARNING" << std::endl;
-        (this->*_complain[2])();
-     }
-    else if  (level == leVel[3]) {
-         std::cout << "ERROR" << std::endl;
-         (this->*_complain[3])();
+    
+    
+    // if (level == leVel[0]) {
+    //     std::cout << "DEBUG" << std::endl;
+    //     (this->*_complain[0])();
+    // }
+    // else if (level == leVel[1]) {
+    //      std::cout << "INFO" << std::endl;
+    //      (this->*_complain[1])();
+    // }
+    //  else if  (level == leVel[2]){
+    //       std::cout << "WARNING" << std::endl;
+    //     (this->*_complain[2])();
+    //  }
+    // else if  (level == leVel[3]) {
+    //      std::cout << "ERROR" << std::endl;
+    //      (this->*_complain[3])();
+    // }
+
+    for(int i = 0; i < 4; i++) {
+        if (leVel[i] == level) {
+             (this->*_complain[i])();
+            std::cout << std::endl;
+            return ;
+        }
     }
 }
     
