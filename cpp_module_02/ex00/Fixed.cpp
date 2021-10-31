@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 18:08:52 by xuwang            #+#    #+#             */
-/*   Updated: 2021/10/29 18:16:14 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/10/31 18:25:29 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,30 +25,34 @@
 #include "Fixed.hpp"
 
 Fixed::Fixed(void) {
-    this->valeur = 0;
+    this->_fixe = 0;
     std::cout << "Default constructor called" << std::endl;
+     return;
 }
 
 Fixed::~Fixed(void){
     std::cout << "Destructor called" << std::endl;
+     return;
 }
 
-Fixed::Fixed(Fixed const &a) {
+Fixed::Fixed(Fixed const &src) {
     std::cout << "Copy constructor called" << std::endl;
-    *this = a;
+    *this = src;
+     return;
 }
 
-Fixed &Fixed::operator = (Fixed const &b) {
+Fixed &Fixed::operator = (Fixed const &rhs) {
 
     std::cout << "Assignation operator called" << std::endl;
-    this->setRawBits(b.getRawBits()); //set raw de b to this
+    this->setRawBits(rhs.getRawBits()); //set raw de b to this
     return *this;
 }
 int Fixed::getRawBits(void)const {
     std::cout << "getRawBits member function called" << std::endl;
-    return this->valeur;
+    return this->_fixe;
 }
 
 void Fixed::setRawBits(int const raw) {
-    this->valeur = raw;
+    this->_fixe = raw;
+     return;
 }

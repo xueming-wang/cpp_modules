@@ -6,14 +6,14 @@
 #    By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/28 18:09:11 by xuwang            #+#    #+#              #
-#    Updated: 2021/10/28 18:10:58 by xuwang           ###   ########.fr        #
+#    Updated: 2021/10/31 16:53:28 by xuwang           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC 		= clang++
 CFLAGS 	= -Wall -Wextra -Werror -std=c++98
 
-NAME 	:= 
+NAME 	:= Fixed
 SRCS    := main.cpp \
 			Fixed.cpp 
 
