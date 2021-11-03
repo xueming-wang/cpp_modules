@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 18:08:54 by xuwang            #+#    #+#             */
-/*   Updated: 2021/10/31 18:29:39 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/11/03 12:44:41 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class Fixed {
     private:
 
         int _fixe;
-        const static int bits = 8;
+        const static int bits;
        
     public:
 

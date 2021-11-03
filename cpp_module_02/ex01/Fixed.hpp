@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 18:09:06 by xuwang            #+#    #+#             */
-/*   Updated: 2021/10/31 18:30:02 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/11/03 12:44:27 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class Fixed {
     private:
 
         int _fixe; //Un int pour stocker la valeur a point fixe
-        const static int bits = 8; 
+        const static int bits; 
        
     public:
 

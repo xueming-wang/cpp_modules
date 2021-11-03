@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 18:08:52 by xuwang            #+#    #+#             */
-/*   Updated: 2021/10/31 18:25:29 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/11/03 12:46:49 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@
 //数字 25.125 用定点数 2.5 = 11001 001
 //原码就是这个数本身的二进制形式。
 #include "Fixed.hpp"
+
+int const Fixed::bits = 8;
 
 Fixed::Fixed(void) {
     this->_fixe = 0;
@@ -44,6 +46,8 @@ Fixed::Fixed(Fixed const &src) {
 Fixed &Fixed::operator = (Fixed const &rhs) {
 
     std::cout << "Assignation operator called" << std::endl;
+    if (this == &rhs)
+        return *this;
     this->setRawBits(rhs.getRawBits()); //set raw de b to this
     return *this;
 }

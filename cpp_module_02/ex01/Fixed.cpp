@@ -6,12 +6,13 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 18:09:04 by xuwang            #+#    #+#             */
-/*   Updated: 2021/10/31 19:11:51 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/11/03 13:46:16 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "Fixed.hpp"
+
+int const Fixed::bits = 8;
 
 Fixed::Fixed(void): _fixe(0){
     std::cout << "Default constructor called" << std::endl;
@@ -42,6 +43,8 @@ Fixed::~Fixed(void) {
 Fixed &Fixed::operator = (Fixed const &rhs) {
 
     std::cout << "Assignation operator called" << std::endl;
+    if (this == &rhs)
+        return *this;
     this->setRawBits(rhs.getRawBits()); //set raw de b to this
     return *this;
 }
@@ -64,8 +67,8 @@ int Fixed::toInt(void) const {
     return( this->_fixe >> Fixed::bits); 
 }
 
-std::ostream &operator << (std::ostream &o, Fixed const &a){
+std::ostream &operator << (std::ostream &o, Fixed const &a){ //output stream  print class
     
-    o << a.toFloat(); //show le nombre a x = x.getRawbites();
+    o << a.toFloat(); 
     return o;
 }
