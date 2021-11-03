@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 18:09:17 by xuwang            #+#    #+#             */
-/*   Updated: 2021/11/03 19:13:35 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/11/03 19:51:33 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,8 +57,8 @@ class Fixed {
 
         static Fixed const  &min(Fixed const &a, Fixed const &b); //全局变量
         static Fixed const  &max(Fixed const &a, Fixed const &b);
-        // Fixed &min(Fixed & a, Fixed & b);
-        // Fixed &max(Fixed & a, Fixed & b);
+        Fixed &min(Fixed & a, Fixed & b);
+        Fixed &max(Fixed & a, Fixed & b);
         
         
 };

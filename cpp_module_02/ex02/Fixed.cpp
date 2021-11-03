@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 18:09:15 by xuwang            #+#    #+#             */
-/*   Updated: 2021/11/03 19:36:14 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/11/03 19:53:32 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,17 @@ Fixed const &Fixed::min(Fixed const &a, Fixed const &b){
 
 Fixed const &Fixed::max(Fixed const &a, Fixed const &b){
     if (a.getRawBits() < b.getRawBits())
+        return (b);
+    return (a);
+}
+Fixed &Fixed::min(Fixed & a, Fixed & b) {
+	if (a.getRawBits() < b.getRawBits())
+        return (a);
+    return (b);
+}
+
+Fixed &Fixed::max(Fixed & a, Fixed & b) {
+	if (a.getRawBits() < b.getRawBits())
         return (b);
     return (a);
 }
@@ -128,7 +139,7 @@ Fixed   &Fixed::operator++(void){   /* PRE INCREMENT */
 
 Fixed   Fixed::operator++(int){  /* POST INCREMENT */
     Fixed tmp = *this;
-    this->_fixe += 1;
+    _fixe += 1;
     return (tmp);
 }
 Fixed   &Fixed::operator--(void){  /* PRE DECREMENT */
@@ -148,10 +159,3 @@ std::ostream &operator << (std::ostream &o, Fixed const &a){
     return o;
 }
 
-// Fixed & 				Fixed::min(Fixed & a, Fixed & b) {
-// 	return (a.getRawBits() < b.getRawBits()) ? a : b;
-// }
-
-// Fixed & 				Fixed::max(Fixed & a, Fixed & b) {
-// 	return (a.getRawBits() > b.getRawBits()) ? a : b;
-// }

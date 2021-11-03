@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 18:09:04 by xuwang            #+#    #+#             */
-/*   Updated: 2021/11/03 13:46:16 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/11/03 20:15:43 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@ Fixed::Fixed(void): _fixe(0){
     return;
 }
 
-Fixed::Fixed(const int i):_fixe(i << Fixed::bits) {  //8位形式 后加0例如 1变成1.00000000
+Fixed::Fixed(const int i):_fixe(i << Fixed::bits) {  // int a fixe 8位形式 后加0例如 1变成1.00000000
     std::cout << "Int constructor called" << std::endl;
      return;
 }
 
-Fixed::Fixed(const float f):_fixe(roundf(f * ((float)(1 << Fixed::bits)))){  //先乘以256
+Fixed::Fixed(const float f):_fixe(roundf(f * ((float)(1 << Fixed::bits)))){  //round 四舍五入先乘以256
      std::cout << "Float constructor called" << std::endl;
       return;
 }
