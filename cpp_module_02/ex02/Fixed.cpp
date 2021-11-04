@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 18:09:15 by xuwang            #+#    #+#             */
-/*   Updated: 2021/11/03 19:53:32 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/11/04 14:56:21 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,7 +128,8 @@ Fixed &Fixed::operator=(Fixed const &rhs) {
 
     if (this == &rhs)
         return *this;
-    this->setRawBits(rhs.getRawBits()); //set raw de b to this
+    this->_fixe = rhs.getRawBits();
+    //this->setRawBits(rhs.getRawBits()); //set raw de b to this
     return *this;
 }
 

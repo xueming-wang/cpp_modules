@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 18:09:04 by xuwang            #+#    #+#             */
-/*   Updated: 2021/11/03 20:15:43 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/11/04 14:54:32 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,8 @@ Fixed &Fixed::operator = (Fixed const &rhs) {
     std::cout << "Assignation operator called" << std::endl;
     if (this == &rhs)
         return *this;
-    this->setRawBits(rhs.getRawBits()); //set raw de b to this
+    this->_fixe = rhs.getRawBits();
+    //this->setRawBits(rhs.getRawBits()); //set raw de b to this
     return *this;
 }
 
@@ -58,11 +59,11 @@ void Fixed::setRawBits(int const raw) {
     return;
 }
 
-
+// un nombres à point fixe en float.
 float Fixed::toFloat(void) const {
     return(((float)this->_fixe) / (float)(1 << Fixed::bits));   //除256
 }
-
+// nombres à point fixe en int.
 int Fixed::toInt(void) const {
     return( this->_fixe >> Fixed::bits); 
 }
