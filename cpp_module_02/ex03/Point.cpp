@@ -32,18 +32,16 @@ Point::~Point() {
 Point   &Point::operator = (Point const &rhs) {  //把rhs里面的值赋予 当前
     if (this == &rhs)
         return *this;
-    // this->getX() = rhs.getX();
-    // this->getY() = rhs.getY();
-    
-    (Fixed)this->_x = (Fixed)rhs._x;
-    (Fixed)this->_y = (Fixed)rhs._y;
+   
+    // int i =1;
+    // int *p = &i;
+    // *p = 2
 
+	Fixed *x = (Fixed *)&this->_x;
+	Fixed *y = (Fixed *)&this->_y;
 
-	// Fixed *x = (Fixed *)&this->_x;
-	// Fixed *y = (Fixed *)&this->_y;
-
-	// *x = rhs._x;
-	// *y = rhs._y;
+	*x = rhs._x;
+	*y = rhs._y;
     
     return *this;
 }
