@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 18:09:30 by xuwang            #+#    #+#             */
-/*   Updated: 2021/11/04 14:42:51 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/11/07 13:59:57 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class Fixed {
        
     public:
 
-        Fixed(void);
+        Fixed(void); //par defaut
         Fixed(const int i);
         Fixed(const float f); 
         Fixed(Fixed const &src); // constructeur par copie 
@@ -58,9 +58,7 @@ class Fixed {
         static Fixed const  &min(Fixed const &a, Fixed const &b); //全局变量
         static Fixed const  &max(Fixed const &a, Fixed const &b);
         Fixed &min(Fixed & a, Fixed & b);
-        Fixed &max(Fixed & a, Fixed & b);
-        
-        
+        Fixed &max(Fixed & a, Fixed & b);        
 };
 
 std::ostream &operator << (std::ostream &o, Fixed const &a);
