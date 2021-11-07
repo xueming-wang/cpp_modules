@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 18:09:28 by xuwang            #+#    #+#             */
-/*   Updated: 2021/11/04 19:03:26 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/11/07 13:53:40 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,34 +103,27 @@ bool Fixed::operator==(Fixed const & rhs) const{
 bool Fixed::operator!=(Fixed const & rhs) const{
     return (this->getRawBits() != rhs.getRawBits());
 }
-
+// Fixed tmp(this->toFloat());
+    // tmp =  Fixed(this->toFloat()+ rhs.toFloat());
+    // return tmp;
 Fixed Fixed::operator+(Fixed const & rhs) const{
-    Fixed tmp(this->toFloat());
-    tmp =  Fixed(this->toFloat()+ rhs.toFloat());
-    return tmp;
+    return Fixed(this->toFloat()+ rhs.toFloat());
 }
 Fixed Fixed::operator-(Fixed const & rhs) const{
-    Fixed tmp(this->toFloat());
-    tmp = Fixed(this->toFloat() - rhs.toFloat());
-    return tmp;
+     return Fixed(this->toFloat() - rhs.toFloat());
 }
 Fixed Fixed::operator*(Fixed const & rhs) const{
-    Fixed tmp(this->toFloat());
-    tmp =  Fixed(this->toFloat() * rhs.toFloat());
-    return tmp;
+    return Fixed(this->toFloat() * rhs.toFloat());
 }
 Fixed Fixed::operator/(Fixed const & rhs) const{
-    Fixed tmp(this->toFloat());
-    tmp =  Fixed(this->toFloat() / rhs.toFloat());
-    return tmp;
+    return Fixed(this->toFloat() / rhs.toFloat());
 }
 
 Fixed &Fixed::operator=(Fixed const &rhs) {
 
     if (this == &rhs)
         return *this;
-    this->_fixe = rhs.getRawBits();
-    //this->setRawBits(rhs.getRawBits()); //set raw de b to this
+    this->_fixe = rhs.getRawBits();//set raw de b to this
     return *this;
 }
 
@@ -155,8 +148,8 @@ Fixed   Fixed::operator--(int){  /* POST DECREMENT */
     return (tmp);
 }
 
-std::ostream &operator << (std::ostream &o, Fixed const &a){
+std::ostream &operator << (std::ostream &o, Fixed const &a) {  /* output info of class */ 
     
-    o << a.toFloat(); //show le nombre a x = x.getRawbites();
+    o << a.toFloat();
     return o;
 }
