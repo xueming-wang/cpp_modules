@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/07 14:07:18 by xuwang            #+#    #+#             */
-/*   Updated: 2021/11/07 17:54:19 by xuwang           ###   ########.fr       */
+/*   Created: 2021/11/07 17:26:25 by xuwang            #+#    #+#             */
+/*   Updated: 2021/11/07 18:00:41 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ class ClapTrap
     public:
         ClapTrap(void);
         ClapTrap(std::string name);
-        ClapTrap(ClapTrap const &src);
-        ~ClapTrap();
+        ClapTrap(ClapTrap const & src);
+        ~ClapTrap(void);
         
         ClapTrap  &operator = (ClapTrap const &rhs);
         
@@ -35,6 +35,7 @@ class ClapTrap
         void takeDamage(unsigned int amount);
         void beRepaired(unsigned int amount);
         std::string get_name(void)const;
+        int  get_Attackdamage(void);
         
 };
 
