@@ -17,7 +17,7 @@
 
 class ClapTrap
 {
-    protected:  /*use in derived class */
+    protected:
         std::string _name;
         int _Hitpoints;
         int _EnergyPoints;

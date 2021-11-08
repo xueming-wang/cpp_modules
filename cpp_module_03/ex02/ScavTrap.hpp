@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 17:27:26 by xuwang            #+#    #+#             */
-/*   Updated: 2021/11/08 18:32:30 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/11/08 18:33:06 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class ScavTrap : public ClapTrap
         ~ScavTrap();
 
         ScavTrap  &operator = (ScavTrap const &rhs);
-        
+
         void guardGate();
 };
 
