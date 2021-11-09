@@ -12,8 +12,8 @@
 
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap(void): ClapTrap(), ScavTrap(), FragTrap(){
-    this->ClapTrap::_name = 
+DiamondTrap::DiamondTrap(void): ScavTrap(), FragTrap(){
+    this->ClapTrap::_name = "Unknow_clap_name";
     this->_name = "Unknow";
     FragTrap::get_HP();
     ScavTrap::get_EP();
@@ -23,6 +23,7 @@ DiamondTrap::DiamondTrap(void): ClapTrap(), ScavTrap(), FragTrap(){
 }
 
 DiamondTrap::DiamondTrap(std::string name) : ScavTrap(name), FragTrap(name){
+    this->ClapTrap::_name = name + "_clap_name";
     this->_name = name;
     FragTrap::get_HP();
     ScavTrap::get_EP();
@@ -42,10 +43,27 @@ DiamondTrap::~DiamondTrap(void) {
     return;
 }
 
-void DiamondTrap::(void) {
+void DiamondTrap::whoAmI(void) {
     std::cout << "DiamondTrap name is: " << this->_name << std::endl;
-    std::cout << "ClapTrap name is: " << this->Claptrap::_name << std::endl;
+    std::cout << "ClapTrap name is: " << this->ClapTrap::_name << std::endl;
 }
+
+void DiamondTrap::attack(std::string const & target) {
+    if (this->_EnergyPoints <= 0)
+        std::cout << this->_name << " doesn't have energy point" << std::endl;
+    else {
+        std::cout << "DiamondTrap " << this->_name << " attack " << target << std::endl ;
+    }
+}
+// void DiamondTrap::takeDamage(unsigned int amount) {
+  
+//     std::cout << " causing " << amount << " points of damage" << std::endl;    
+//     this->_Hitpoints -= amount;
+//     if (this->_Hitpoints <= 0)
+//         std::cout << this->_name << " is died" << std::endl;
+//     else
+//        std::cout << this->_name << " hit point left: " << this->_Hitpoints << std::endl;
+// }
 
 DiamondTrap &DiamondTrap::operator = (DiamondTrap const &rhs) {
     

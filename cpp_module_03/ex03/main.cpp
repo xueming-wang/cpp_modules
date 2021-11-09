@@ -10,26 +10,18 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
-#include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int main() {
-    
-    ClapTrap A("wang");
-    ScavTrap B("target");
-    FragTrap C("guys");
-
-    A.attack(B.get_name());
-    B.takeDamage(A.get_Attackdamage()); //amount = attackdamage
-    B.guardGate();
-
-    B.attack(A.get_name());
-    A.takeDamage(B.get_Attackdamage());
-    A.beRepaired(5);
-
-    B.attack(C.get_name());
-    C.takeDamage(B.get_Attackdamage());
-    C.highFivesGuys();
+   
+   
+   DiamondTrap a("wang");
+   
+   a.whoAmI();
+   a.attack("kang");
+   a.beRepaired(5);
+   a.guardGate();
+   a.highFivesGuys();
 
     return (0);
 }

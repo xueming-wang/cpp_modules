@@ -14,14 +14,14 @@
 # define FRAGTRAP_HPP
 
 #include "ClapTrap.hpp"
-
-class FragTrap : public ClapTrap
+/* 避免二次调用基类 Virtual inheritance */
+class FragTrap : virtual public ClapTrap
 {
     public:
         FragTrap(void);
         FragTrap(std::string name);
         FragTrap(FragTrap const &src);
-        ~FragTrap();
+        virtual ~FragTrap();
 
         FragTrap  &operator = (FragTrap const &rhs);
 
