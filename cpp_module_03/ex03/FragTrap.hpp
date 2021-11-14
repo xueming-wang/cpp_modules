@@ -15,7 +15,7 @@
 
 #include "ClapTrap.hpp"
 /* 避免二次调用基类 Virtual inheritance */
-class FragTrap : virtual public ClapTrap
+class FragTrap : virtual public ClapTrap  //virtual public
 {
     public:
         FragTrap(void);
