@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/14 15:26:24 by xuwang            #+#    #+#             */
-/*   Updated: 2021/11/14 18:10:09 by xuwang           ###   ########.fr       */
+/*   Created: 2021/11/14 17:10:16 by xuwang            #+#    #+#             */
+/*   Updated: 2021/11/14 18:35:18 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define ANIMAL_HPP
 
 # include <iostream>
-
+# define IDEAS_NUM 100
 class  Animal
 {
     protected:
@@ -23,7 +23,8 @@ class  Animal
     public:
         Animal(void);
         Animal(Animal const & src);
-        virtual ~Animal();
+        Animal(std::string const &_type);
+        virtual ~Animal(void);
         virtual void makeSound()const;
         std::string getType()const;
         
@@ -33,24 +34,48 @@ class  Animal
 
 class Dog : public Animal
 {  
+    private:
+        Brain *a;
+        
     public:
         Dog(void);
         Dog(Dog const & src);
-        virtual ~Dog();
+        virtual ~Dog(void);
         void makeSound()const;
+        Brain *getBrain()const;
         
         Dog  &operator = (Dog const &rhs);
 };
 
 class Cat : public Animal
 {
+    private:
+        Brain *b;
+
     public:
         Cat(void);
         Cat(Cat const & src);
-        virtual ~Cat();
+        virtual ~Cat(void);
         void makeSound()const;
+        Brain *getBrain()const;
 
         Cat  &operator = (Cat const &rhs);
+};
+
+class Brain
+{
+    private:
+        std::string ideas[IDEAS_NUM];
+        
+    public:
+        Brain(void);
+        Brain(Cat const & src);
+        ~Brain();
+        
+        Brain  &operator = (Brain const &rhs);
+
+        std::string getIdea(int i)const;
+        void setIdea(std::string idea, int i);
 };
 
 #endif

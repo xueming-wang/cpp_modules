@@ -5,18 +5,24 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/14 16:02:18 by xuwang            #+#    #+#             */
-/*   Updated: 2021/11/14 18:12:14 by xuwang           ###   ########.fr       */
+/*   Created: 2021/11/14 17:09:58 by xuwang            #+#    #+#             */
+/*   Updated: 2021/11/14 18:58:57 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//Abstract classes and interface 抽象类和接口 至少有一个函数被声明为纯虚函数，则这个类就是抽象类
+//为什么用神拷贝 指针或者引用来说 那么拷贝后的物体的指针也和原来的指针指向的是同一个对象，
+//是针对指针的，浅拷贝是只拷贝指针地址，意思是浅拷贝指针都指向同一个内存空间，当原指针地址所指空间被释放，那么浅拷贝的指针全部失效。
+//深拷贝是先申请一块跟被拷贝数据一样大的内存空间，把数据复制过去。这样拷贝多少次，就有多少个不同的内存空间，干扰不到对方。
 #include "Animal.hpp"
 /*
 Animal
-*/
+*/   //缺一个函数
 Animal::Animal() {
     std::cout << "Animal constructor called" << std::endl;
+}
+
+Animal::Animal(std::string const &_type){
+    this->type = _type;
 }
 
 Animal::Animal(Animal const & src){
@@ -46,8 +52,8 @@ Animal  &Animal::operator = (Animal const &rhs){
 /*
 Dog
 */
-Dog::Dog() {
-    this->type = "dog";
+Dog::Dog(): Animal("Dog"){
+    this->a = new Brain();
     std::cout << "Dog constructor called" << std::endl;
 }
 
@@ -57,11 +63,12 @@ Dog::Dog(Dog const & src) {
 	return ;
 }
 Dog::~Dog() {
+    delete this->a;
     std::cout << "Dog destructor called" << std::endl;
 }
 
-void Dog::makeSound()const {
-    std::cout << "Dog makeSound" << std::endl;
+Brain *Dog::getBrain()const {
+    return this->a;
 }
 
 Dog  &Dog::operator = (Dog const &rhs){
@@ -70,21 +77,26 @@ Dog  &Dog::operator = (Dog const &rhs){
     this->type = rhs.type;
     return *this;
 }
+
+void Dog::makeSound()const {
+    std::cout << "Dog makeSound" << std::endl;
+}
 /*
-Cat
+CAT
 */
-Cat::Cat() {
-    this->type = "cat";
+Cat::Cat(): Animal("Cat") {
+    this->b = new Brain();
     std::cout << "Cat constructor called" << std::endl;
 }
 
-Cat:: Cat(Cat const & src) {
+Cat:: Cat(Cat const & src): Animal(src) {
     std::cout << "Cat assignment constructor" << std::endl;
-	*this = src;
+    this->b = new Brain(*(src.b));
 	return ;
 }
 
 Cat::~Cat(){
+    delete this->b;
     std::cout << "Cat destructor called" << std::endl;
 }
 
@@ -92,9 +104,46 @@ void Cat::makeSound()const {
     std::cout << "Cat makeSound" << std::endl;
 }
 
+Brain *Cat::getBrain()const {
+    return this->b;
+}
+
 Cat  &Cat::operator = (Cat const &rhs){
     if (this == &rhs)
         return *this;
     this->type = rhs.type;
+    return *this;
+}
+/*
+Brain
+*/
+Brain::Brain() {  //!!!!!!!!
+
+    std::cout << "Brain constructor called" << std::endl;
+}
+
+Brain::Brain(Brain const & src){
+    std::cout << "Brain assignment constructor" << std::endl;
+    *this = src;
+    return;
+}
+
+Brain::~Brain(){
+     std::cout << "Brain destructor called" << std::endl;
+}
+
+std::string Brain::getIdea(int i)const {
+    return this->ideas[i];
+}
+
+void Brain::setIdea(std::string idea, int i) {
+    this->ideas[i] = idea;
+}
+
+Brain  &Brain::operator = (Brain const &rhs){
+    if (this == &rhs)
+        return *this;
+    for(int i = 0; i < IDEAS_NUM; i++)
+        this->ideas[i] = rhs.ideas[i];
     return *this;
 }
