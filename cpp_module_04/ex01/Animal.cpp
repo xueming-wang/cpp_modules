@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/14 17:09:58 by xuwang            #+#    #+#             */
-/*   Updated: 2021/11/14 18:58:57 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/11/14 19:12:40 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,9 +57,10 @@ Dog::Dog(): Animal("Dog"){
     std::cout << "Dog constructor called" << std::endl;
 }
 
-Dog::Dog(Dog const & src) {
+Dog::Dog(Dog const & src): Animal(src) {
+
     std::cout << "Dog assignment constructor" << std::endl;
-	*this = src;
+	this->a = new Brain(*(src.a));
 	return ;
 }
 Dog::~Dog() {
