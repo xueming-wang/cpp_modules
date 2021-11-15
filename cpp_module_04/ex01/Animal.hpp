@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/14 17:10:16 by xuwang            #+#    #+#             */
-/*   Updated: 2021/11/14 18:35:18 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/11/15 15:50:58 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,23 @@
 
 # include <iostream>
 # define IDEAS_NUM 100
+
+class Brain
+{
+    private:
+        std::string ideas[IDEAS_NUM];
+        
+    public:
+        Brain(void);
+        Brain(Brain const & src);
+        ~Brain();
+        
+        Brain  &operator = (Brain const &rhs);
+
+        std::string getIdea(int i)const;
+        void setIdea(std::string idea, int i);
+};
+
 class  Animal
 {
     protected:
@@ -62,20 +79,6 @@ class Cat : public Animal
         Cat  &operator = (Cat const &rhs);
 };
 
-class Brain
-{
-    private:
-        std::string ideas[IDEAS_NUM];
-        
-    public:
-        Brain(void);
-        Brain(Cat const & src);
-        ~Brain();
-        
-        Brain  &operator = (Brain const &rhs);
 
-        std::string getIdea(int i)const;
-        void setIdea(std::string idea, int i);
-};
 
 #endif
