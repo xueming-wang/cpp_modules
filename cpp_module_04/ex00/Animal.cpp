@@ -6,11 +6,11 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/14 16:02:18 by xuwang            #+#    #+#             */
-/*   Updated: 2021/11/15 16:18:22 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/11/15 17:40:07 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//Abstract classes and interface 抽象类和接口 至少有一个函数被声明为纯虚函数，则这个类就是抽象类
+/* Polymorphism */
 #include "Animal.hpp"
 /*
 Animal

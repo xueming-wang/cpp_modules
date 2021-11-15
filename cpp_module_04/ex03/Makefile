@@ -5,19 +5,19 @@
 #                                                     +:+ +:+         +:+      #
 #    By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/11/14 14:06:50 by xuwang            #+#    #+#              #
-#    Updated: 2021/11/15 17:43:20 by xuwang           ###   ########.fr        #
+#    Created: 2021/11/15 17:37:50 by xuwang            #+#    #+#              #
+#    Updated: 2021/11/15 18:45:08 by xuwang           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC 		= clang++
 CFLAGS 	= -Wall -Wextra -Werror -std=c++98
 
-NAME 	:= Animal
+NAME 	:= AMateria
 SRCS    := main.cpp \
-			Animal.cpp \
-			WrongAnimal.cpp
-
+			AMateria.cpp \
+			MateriaSource.cpp \
+			Character.cpp
 
 OBJS := $(SRCS:%.cpp=%.o)
 

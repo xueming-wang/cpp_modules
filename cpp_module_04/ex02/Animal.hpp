@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 17:17:52 by xuwang            #+#    #+#             */
-/*   Updated: 2021/11/15 17:36:16 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/11/15 17:49:35 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,8 @@ class  Animal
         Animal(Animal const & src);
         Animal(std::string const &_type);
         virtual ~Animal(void);
-        /* pure virtual function */
-        virtual void makeSound()const = 0;  
+       
+        virtual void makeSound()const = 0;   /* pure virtual function */
         std::string getType()const;
         
         Animal  &operator = (Animal const &rhs);
