@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/14 17:10:16 by xuwang            #+#    #+#             */
-/*   Updated: 2021/11/15 17:28:20 by xuwang           ###   ########.fr       */
+/*   Created: 2021/11/15 17:17:52 by xuwang            #+#    #+#             */
+/*   Updated: 2021/11/15 17:29:32 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,8 @@ class  Animal
         Animal(Animal const & src);
         Animal(std::string const &_type);
         virtual ~Animal(void);
-        
+        virtual void makeSound()const = 0;  //Abstract classes
         std::string getType()const;
-        virtual void makeSound()const;
         
         Animal  &operator = (Animal const &rhs);
         
