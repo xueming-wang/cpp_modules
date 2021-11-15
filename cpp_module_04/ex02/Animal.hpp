@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 17:17:52 by xuwang            #+#    #+#             */
-/*   Updated: 2021/11/15 17:29:32 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/11/15 17:36:16 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ class Brain
         std::string getIdea(int i)const;
         void setIdea(std::string idea, int i);
 };
-
+/*Abstract classes*/
 class  Animal
 {
     protected:
@@ -42,7 +42,8 @@ class  Animal
         Animal(Animal const & src);
         Animal(std::string const &_type);
         virtual ~Animal(void);
-        virtual void makeSound()const = 0;  //Abstract classes
+        /* pure virtual function */
+        virtual void makeSound()const = 0;  
         std::string getType()const;
         
         Animal  &operator = (Animal const &rhs);
