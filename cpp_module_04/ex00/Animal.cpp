@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/14 16:02:18 by xuwang            #+#    #+#             */
-/*   Updated: 2021/11/14 18:12:14 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/11/15 16:18:22 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,8 @@ Animal  &Animal::operator = (Animal const &rhs){
 Dog
 */
 Dog::Dog() {
-    this->type = "dog";
     std::cout << "Dog constructor called" << std::endl;
+    this->type = "dog";
 }
 
 Dog::Dog(Dog const & src) {
@@ -74,8 +74,8 @@ Dog  &Dog::operator = (Dog const &rhs){
 Cat
 */
 Cat::Cat() {
-    this->type = "cat";
     std::cout << "Cat constructor called" << std::endl;
+    this->type = "cat";
 }
 
 Cat:: Cat(Cat const & src) {

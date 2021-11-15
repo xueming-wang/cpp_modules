@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/14 17:09:58 by xuwang            #+#    #+#             */
-/*   Updated: 2021/11/15 16:16:48 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/11/15 16:40:15 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ Brain
 Brain::Brain() { //创建一个大脑穿进去三个想法到idea;
     std::cout << "Brain constructor called" << std::endl;
     
-    const std::string brain[] = {"cry ", "small ", "angry \n"};
-    for(int i = 0; i < 3; i++){
-        this->ideas[i] = brain[i];
+    const std::string brain[] = {"cry ", "small ", "angry "};
+    for(int i = 0; i < IDEAS_NUM; i++){
+        this->ideas[i] = brain[rand() % (sizeof(brain) / sizeof(std::string))];
         std::cout << this->ideas[i];
     }
     std::cout << std::endl;
@@ -30,7 +30,7 @@ Brain::Brain() { //创建一个大脑穿进去三个想法到idea;
 
 Brain::Brain(Brain const & src){
     std::cout << "Brain assignment constructor" << std::endl;
-    for(int i = 0; i < 3; i++){
+    for(int i = 0; i < IDEAS_NUM; i++){
         this->ideas[i] = src.ideas[i];
     }
     return;
@@ -52,7 +52,7 @@ void Brain::setIdea(std::string idea, int i) {
 Brain  &Brain::operator = (Brain const &rhs){
     if (this == &rhs)
         return *this;
-    for(int i = 0; i < 3; i++)
+    for(int i = 0; i < IDEAS_NUM; i++)
         this->ideas[i] = rhs.ideas[i];
     return *this;
 }
