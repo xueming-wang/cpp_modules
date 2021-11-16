@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 18:43:03 by xuwang            #+#    #+#             */
-/*   Updated: 2021/11/16 15:37:16 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/11/16 15:58:59 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,14 @@ std::string const & Character::getName() const {
     return (this->_name);
 }
 void Character::equip(AMateria* m) {
+    if (!m)
+        std::cout << "m no exist! " << std::endl;
+    for (int i = 0; i < INVENTORY; i++) {
+        if (!this->_amatria[i])
+            this->_amatria[i] = m;
+        return;
+    }
+    std::cout << "m can't equipe, inventory is full " << std::endl; 
     
 }
 void Character::unequip(int idx) {}
