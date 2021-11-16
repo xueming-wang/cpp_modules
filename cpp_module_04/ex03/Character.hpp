@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 18:13:54 by xuwang            #+#    #+#             */
-/*   Updated: 2021/11/16 15:21:08 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/11/16 17:47:03 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class Character: public ICharacter
         Character(void);
         Character(std::string const &name);
         Character(Character const &src);
-        ~Character();
+        virtual ~Character();
         
         Character &	operator=(Character const & rhs);
         

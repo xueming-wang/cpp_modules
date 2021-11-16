@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 17:42:38 by xuwang            #+#    #+#             */
-/*   Updated: 2021/11/15 18:54:25 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/11/16 17:48:06 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class AMateria
         AMateria(void);
         AMateria(std::string const & type);
         AMateria(AMateria const &src);
-        ~AMateria(void);
+        virtual ~AMateria(void);
         
         AMateria &	operator=(AMateria const & rhs);
         

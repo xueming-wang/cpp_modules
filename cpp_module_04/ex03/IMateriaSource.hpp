@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 18:08:18 by xuwang            #+#    #+#             */
-/*   Updated: 2021/11/15 18:44:23 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/11/16 17:32:12 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 #define IMATERIASOURCE_HPP
 
 #include <iostream>
+#include "AMateria.hpp"
+
+class AMateria;
 
 class IMateriaSource
 {
