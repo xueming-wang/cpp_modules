@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 18:13:54 by xuwang            #+#    #+#             */
-/*   Updated: 2021/11/15 18:47:04 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/11/16 15:21:08 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,13 @@
 #define CHARACTER_HPP
 
 #include "ICharacter.hpp"
+#define INVENTORY 4
 
 class Character: public ICharacter
 {
     private:
         std::string	_name;
+        AMateria *_amatria[INVENTORY];
         
     public:
         Character(void);
