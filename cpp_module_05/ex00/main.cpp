@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 18:34:07 by xuwang            #+#    #+#             */
-/*   Updated: 2021/11/17 17:01:10 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/11/17 18:29:50 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,49 @@
 
 int main() {
     
-    Bureaucrat a("xuwang", 1);
+    Bureaucrat a("xuwang", 2);
+    std::cout << "a is: " << a << std::endl;
+    
+    Bureaucrat b("you", 149);
+    std::cout << "b is: " << b << std::endl;
+
+    
+    a.decGrade();
+    std::cout << "2 - 1 = " << a.getGrade() << std::endl;
+
+    
+    b.incGrade();
+    std::cout << "149 + 1 = " << b.getGrade() << std::endl;
+
+     
+   
+    
     try
     {
         a.decGrade();
+        std::cout << a << std::endl;
     }
     catch (std::exception & e) {
-
-        std::cout << e.what() << std::endl;
+        std::cout << "1 - 1 " << std::endl;
+        std::cerr << e.what() << std::endl;
+    }
+    try
+    {
+        b.incGrade();
+        std::cout << b << std::endl;
+    }
+    catch (std::exception & e) {
+        std::cout << "150 + 1 " << std::endl;
+        std::cerr << e.what() << std::endl;
+    }
+    try
+    {
+        Bureaucrat c("paul", 0);
+    }
+    catch(const std::exception& e)
+    {
+        std::cout << "paul's "; 
+        std::cerr << e.what() << '\n';
     }
     return 0;
 }
