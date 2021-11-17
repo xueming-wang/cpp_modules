@@ -6,14 +6,14 @@
 #    By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/16 18:34:09 by xuwang            #+#    #+#              #
-#    Updated: 2021/11/16 18:34:58 by xuwang           ###   ########.fr        #
+#    Updated: 2021/11/17 17:00:37 by xuwang           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC 		= clang++
 CFLAGS 	= -Wall -Wextra -Werror -std=c++98
 
-NAME 	:= AMateria
+NAME 	:= Bureaucrat
 SRCS    := main.cpp \
 			Bureaucrat.cpp
 

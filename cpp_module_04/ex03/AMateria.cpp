@@ -6,13 +6,13 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 17:42:36 by xuwang            #+#    #+#             */
-/*   Updated: 2021/11/16 13:39:48 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/11/17 15:54:47 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AMateria.hpp"
 /*AMateria*/
-AMateria::AMateria(void):_type("Unknow") {}
+AMateria::AMateria(void) {}
 
 AMateria::AMateria(std::string const & type):_type(type) {}
 
