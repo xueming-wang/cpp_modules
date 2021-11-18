@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 16:27:01 by xuwang            #+#    #+#             */
-/*   Updated: 2021/11/18 17:37:35 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/11/18 18:32:20 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,11 @@
 
 #include "Form.hpp"
 
+
 class ShrubberyCreationForm : public Form
 {
     private:
-        std::string _shrubbery;
+        std::string _name;
         
     public:
         ShrubberyCreationForm(void);
