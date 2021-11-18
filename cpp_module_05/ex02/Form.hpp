@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 18:34:58 by xuwang            #+#    #+#             */
-/*   Updated: 2021/11/17 19:02:32 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/11/18 17:51:00 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ class Form {
         class GradeTooLowException: public std::exception {
              const char * what () const throw ();
         };
+        virtual void	execute(Bureaucrat const &) const = 0;
 };
 std::ostream & operator<<(std::ostream & o, Form const & i);
 
