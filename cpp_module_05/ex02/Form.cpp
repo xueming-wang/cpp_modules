@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 18:34:56 by xuwang            #+#    #+#             */
-/*   Updated: 2021/11/18 16:09:50 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/11/18 21:14:08 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,3 +86,10 @@ std::ostream & operator<<(std::ostream & o, Form const & i){
      o << " ,ExecGrade is: " << i.getExecGrade() <<  std::endl;
     return o;
 }
+
+// void Form::setSignForm()const {
+//     this->_signe = 
+// }
+// bool Form::getsignForm(void)const {
+    
+// }

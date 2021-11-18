@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 16:26:58 by xuwang            #+#    #+#             */
-/*   Updated: 2021/11/18 18:37:22 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/11/18 21:08:00 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,10 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(ShrubberyCreationForm co
     return *this;
 }
 
-void ShrubberyCreationForm::execute(Bureaucrat const & executor) const{}
+void ShrubberyCreationForm::execute(Bureaucrat const & executor) const{
+    if (executor.getGrade() < this->getExecGrade())
+            throw Form::GradeTooLowException();
+    
+    
+    
+}

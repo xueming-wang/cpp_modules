@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 18:35:03 by xuwang            #+#    #+#             */
-/*   Updated: 2021/11/18 17:47:08 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/11/18 21:08:40 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ class Bureaucrat
         void incGrade(void);
         void decGrade(void); //le grade 1 est le plus haut,
         void signForm(Form & a)const;
-
+        
         Bureaucrat &operator=(Bureaucrat const & rhs);
 
         void	Bureaucrat::executeForm(Form const & form);
