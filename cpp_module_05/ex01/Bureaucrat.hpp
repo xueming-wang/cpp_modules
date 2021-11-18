@@ -15,8 +15,7 @@
 
 #include <iostream>
 #include <exception>
-#define NOTE_MIN 1
-#define NOTE_MAX 150
+
 
 class Form;
 class Bureaucrat

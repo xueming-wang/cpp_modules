@@ -5,17 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/16 18:34:04 by xuwang            #+#    #+#             */
-/*   Updated: 2021/11/17 18:51:21 by xuwang           ###   ########.fr       */
+/*   Created: 2021/11/17 18:35:03 by xuwang            #+#    #+#             */
+/*   Updated: 2021/11/17 19:21:04 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BUREAUCRAT_HPP
 # define BUREAUCRAT_HPP
 
+#include "Form.hpp"
 #include <iostream>
 #include <exception>
 
+class Form;
 class Bureaucrat
 {
     private:
@@ -39,6 +41,7 @@ class Bureaucrat
         int getGrade()const;
         void incGrade(void);
         void decGrade(void); //le grade 1 est le plus haut,
+        void signForm(Form & a)const;
 
         Bureaucrat &operator=(Bureaucrat const & rhs);
        
