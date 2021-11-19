@@ -6,49 +6,38 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 16:09:01 by xuwang            #+#    #+#             */
-/*   Updated: 2021/11/18 16:09:07 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/11/19 17:57:00 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 int main() {
     
-    Bureaucrat  b1("b1", 1);
-    std::cout << "a is: " << b1 << std::endl;
+    try {
+        Bureaucrat  b1("b1", 1);
+        ShrubberyCreationForm s1("target1");
+        std::cout << s1 << std::endl;
     
-    Bureaucrat  b2("b2", 100);
-    std::cout << "b is: " << b2 << std::endl;
-
-    Form f1("f1", 100, 50);
-    std::cout << "c is: " << f1;
-
-    Form f2("f2", 70, 20);
-    std::cout << "d is: " << f2;
-
-    std::cout << "b1 signe f1 ";
-    b1.signForm(f1);
-
-    std::cout << "b1 signe f2: ";
-    b1.signForm(f2);
+        b1.executeForm(s1);
+    }
+    catch (std::exception & e) {
+		std::cerr << e.what() << std::endl;
+	}
     
-    std::cout << "b2 signe f2 ";
-    b2.signForm(f2);
-
-    f2 = f1;  //change signegrade is 70
-    std::cout << "b2 signe f2: ";
-    b2.signForm(f2);
     
-    std::cout << std::endl;
-    std::cout << "-------------Exceptin test-----------" << std::endl;
+    
+
     try
     {
-           Bureaucrat B1("B1", 80);
-           std::cout << B1 << std::endl;
-
-           Form F1("F1", 50, 10);
-           B1.signForm(F1);
+           Bureaucrat b2("b2", 100);
+           RobotomyRequestForm r2("target2");
+           r2.execute(b2);
+           b2.executeForm(r2);
     }
     catch (std::exception & e) {
        std::cerr << e.what() << std::endl;
@@ -56,11 +45,15 @@ int main() {
     
     try
     {
-        Form F2("F2", -1, 151);
+        Bureaucrat b3("b3", 100);
+        PresidentialPardonForm p3("target3");
+        p3.execute(b3);
+        b3.executeForm(p3);
     }
     catch(const std::exception& e)
     {
         std::cerr << e.what() << std::endl;
     }
+    
     return 0;
 }

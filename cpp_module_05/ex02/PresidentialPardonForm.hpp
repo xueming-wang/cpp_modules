@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 16:26:52 by xuwang            #+#    #+#             */
-/*   Updated: 2021/11/18 17:41:46 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/11/19 17:20:44 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 class PresidentialPardonForm : public Form
 {
     private:
-        std::string _shrubbery;
+        std::string const _target;
         
     public:
         PresidentialPardonForm(void);
@@ -27,6 +27,7 @@ class PresidentialPardonForm : public Form
 		virtual ~PresidentialPardonForm(void);
         
         PresidentialPardonForm & operator=(PresidentialPardonForm const & rhs);
+        std::string gettarget(void)const;
 
         void execute(Bureaucrat const & executor) const;
 };

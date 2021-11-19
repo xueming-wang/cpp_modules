@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 18:34:56 by xuwang            #+#    #+#             */
-/*   Updated: 2021/11/18 21:14:08 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/11/19 16:18:30 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,16 +80,12 @@ const char *Form::GradeTooHighException::what() const throw() {
 const char *Form::GradeTooLowException::what() const throw() {
     return "Grate is too low Exception!" ;
 }
-
+const char *Form::NotSignedException::what() const throw() {
+     return "Form is not signe!" ;
+}
 std::ostream & operator<<(std::ostream & o, Form const & i){
      o << i.getName() << " signe is: " << i.getsigne() << " ,signeGrade is: " << i.getSigneGrade();
      o << " ,ExecGrade is: " << i.getExecGrade() <<  std::endl;
     return o;
 }
 
-// void Form::setSignForm()const {
-//     this->_signe = 
-// }
-// bool Form::getsignForm(void)const {
-    
-// }

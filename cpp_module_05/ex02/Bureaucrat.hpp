@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 18:35:03 by xuwang            #+#    #+#             */
-/*   Updated: 2021/11/18 21:08:40 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/11/19 17:50:31 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ class Bureaucrat
         
         Bureaucrat &operator=(Bureaucrat const & rhs);
 
-        void	Bureaucrat::executeForm(Form const & form);
+        void	executeForm(Form const & form);
        
 };
 std::ostream & operator<<(std::ostream & o, Bureaucrat const & i);

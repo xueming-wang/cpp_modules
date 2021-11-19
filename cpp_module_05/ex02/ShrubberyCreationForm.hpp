@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 16:27:01 by xuwang            #+#    #+#             */
-/*   Updated: 2021/11/18 18:32:20 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/11/19 16:17:52 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 # define SHRUVVERTGREATIONFORM_HPP
 
 #include "Form.hpp"
-
+#include <fstream>
 
 class ShrubberyCreationForm : public Form
 {
     private:
-        std::string _name;
+        std::string const _target;
         
     public:
         ShrubberyCreationForm(void);
@@ -28,7 +28,8 @@ class ShrubberyCreationForm : public Form
 		virtual ~ShrubberyCreationForm(void);
         
         ShrubberyCreationForm & operator=(ShrubberyCreationForm const & rhs);
-
+        std::string gettarget(void)const;
+       
         void execute(Bureaucrat const & executor) const;
 };
 

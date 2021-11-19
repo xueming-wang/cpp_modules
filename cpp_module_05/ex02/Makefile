@@ -6,7 +6,7 @@
 #    By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/18 16:09:12 by xuwang            #+#    #+#              #
-#    Updated: 2021/11/18 16:09:14 by xuwang           ###   ########.fr        #
+#    Updated: 2021/11/19 17:52:04 by xuwang           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,11 @@ CFLAGS 	= -Wall -Wextra -Werror -std=c++98
 NAME 	:= Form
 SRCS    := main.cpp \
 			Bureaucrat.cpp \
-			Form.cpp
+			Form.cpp \
+			PresidentialPardonForm.cpp \
+			RobotomyRequestForm.cpp \
+			ShrubberyCreationForm.cpp
+			
 
 OBJS := $(SRCS:%.cpp=%.o)
 

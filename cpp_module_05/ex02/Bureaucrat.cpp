@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 18:35:05 by xuwang            #+#    #+#             */
-/*   Updated: 2021/11/18 21:09:44 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/11/19 17:35:30 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,5 +69,15 @@ void Bureaucrat::signForm(Form & a)const{
     }
     catch(std::exception &e) {
          std::cout << this->_name << " cannot sign because " << e.what() << std::endl;
+    }
+}
+
+void	Bureaucrat::executeForm(Form const & form){
+    try {
+        form.execute(*this);
+            std::cout << this->_name << " executs " << form.getName() << std::endl;
+    }
+    catch (std::exception &e) {
+        std::cout << this->_name << " cannot executs " << form.getName() << " becase " << e.what() << std::endl;
     }
 }

@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 16:26:56 by xuwang            #+#    #+#             */
-/*   Updated: 2021/11/18 17:38:48 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/11/19 16:20:14 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 class RobotomyRequestForm : public Form
 {
     private:
-        std::string _shrubbery;
+        std::string const _target;
         
     public:
         RobotomyRequestForm(void);
@@ -27,7 +27,8 @@ class RobotomyRequestForm : public Form
 		virtual ~RobotomyRequestForm(void);
         
         RobotomyRequestForm & operator=(RobotomyRequestForm const & rhs);
-
+        std::string gettarget(void)const;
+         
         void execute(Bureaucrat const & executor) const;
 };
 
