@@ -6,7 +6,7 @@
 #    By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/18 16:09:12 by xuwang            #+#    #+#              #
-#    Updated: 2021/11/19 17:52:04 by xuwang           ###   ########.fr        #
+#    Updated: 2021/11/21 15:31:15 by xuwang           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,6 +32,7 @@ all: $(NAME)
 
 clean:	
 		rm -rf $(OBJS)
+		rm -rf *_shrubbery
 
 fclean: clean
 		rm -rf $(NAME)

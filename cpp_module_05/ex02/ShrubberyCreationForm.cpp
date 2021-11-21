@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 16:26:58 by xuwang            #+#    #+#             */
-/*   Updated: 2021/11/19 16:18:44 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/11/21 15:17:42 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(ShrubberyCreationForm co
 void ShrubberyCreationForm::execute(Bureaucrat const & executor) const{
     if (this->getsigne() == false)
         throw Form::NotSignedException();
-    if (executor.getGrade() < this->getExecGrade())
+    if (executor.getGrade() > this->getExecGrade())
         throw Form::GradeTooLowException();
     std::ifstream infile("Asciitree");
     if (!infile)
