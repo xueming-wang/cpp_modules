@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 16:09:01 by xuwang            #+#    #+#             */
-/*   Updated: 2021/11/21 15:26:50 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/11/21 19:06:05 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int main() {
     
     std::cout << "creat Shrubbery-----------------" << std::endl;
     try {
-        Bureaucrat  b1("b1", 1);
+        Bureaucrat  b1("b1", 100);
         std::cout << b1 << std::endl;
         ShrubberyCreationForm s1("target1");
         std::cout << s1;

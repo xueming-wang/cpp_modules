@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/27 16:59:51 by xuwang            #+#    #+#             */
-/*   Updated: 2021/10/28 15:51:59 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/11/21 17:38:26 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class Karen {
         void warning(void);
         void error(void);
     
-         void (Karen::*_complain[4])(void); //function pointeur is not fonction 
+        void (Karen::*_complain[4])(void); //function pointeur is not fonction 
     
     public:
         Karen(void);
@@ -34,7 +34,5 @@ class Karen {
         void complain(std::string level);
         
 };
-
-
 
 #endif
