@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 18:34:58 by xuwang            #+#    #+#             */
-/*   Updated: 2021/11/19 17:50:18 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/11/23 16:30:31 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ class Form {
              const char * what () const throw ();
         };
         class NotSignedException : public std::exception {
-				virtual char const	*what() const throw();
+				      const char *what() const throw();
         };
 
         virtual void	execute(Bureaucrat const &) const = 0;
