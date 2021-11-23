@@ -6,63 +6,113 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 15:19:10 by xuwang            #+#    #+#             */
-/*   Updated: 2021/11/23 17:28:10 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/11/23 19:49:00 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Convert.hpp"
 
 Convert::Convert(void) {}
+Convert::Convert(std::string str): _str(str){}
 Convert::Convert(Convert const &src){ *this = src;}
 Convert::~Convert(void){}
 Convert &Convert::operator=(Convert const & rhs){
     if (this == &rhs) return *this;
-
 	this->_str = rhs._str;
 	return *this;
 }
-std::string Convert::getstr(void){
-    return this->_str;
-}
+// std::string const &Convert::getstr(void)const{
+//     return this->_str;
+// }
 
-void Convert::convertChar(void){
-    char c = static_cast<char>(this->_str);
+Convert::operator char(void){
+    std::string str = this->_str;
     long l = 0;
     char *p = NULL;
     
-    l = strtol(this->_str, p, 10);//strtol() 函数用来将字符串转换为长整型数(long)
-    if (p != NULL) //表示不能转化为long 
+    l = strtol(str.c_str(), &p, 10);  //strtol() 字符串char *不能转化成long  
+    if (str.c_str() == p)                //表示不能转化为long 
+        throw Convert::MyimpossibleConvert();
+    if (l < 32 || l > 126)      //1-31，127没有字符可以显示
         throw Convert::MydisplayConvert();
-    if (l < 32 || c > 126) //1-31，127没有字符可以显示
-        throw Convert::MyBadConvert();
-    
-   
-    
-   return static_cast<char>(this->_str);
+    return static_cast<char>(l);  //60显示 < 
 }
-void Convert::convertInt(void){
-    return static_cast<int>(getstr());
+Convert::operator int(void){
+    std::string str = this->_str;
+    long l = 0;
+    char *p = NULL;
+
+    l = strtol(str.c_str(), &p, 10);
+    if (str.c_str() == p || l > INT32_MAX || l < INT32_MIN)
+         throw Convert::MyimpossibleConvert();
+    return static_cast<int>(l);
 }
-void Convert::convertFloat(void){
-    return static_cast<float>(getstr());
+Convert::operator float(void){
+    std::string str = this->_str;
+    float f = 0.0f;
+    char *p = NULL;
+    f = strtof(str.c_str(), &p);
+    if (str.c_str() == p)
+        throw Convert::MyimpossibleConvert();
+    return static_cast<float>(f);
 }
-void Convert::convertDouble(void){
-    double d;
-    d = strtod(this->_this, )
-   return static_cast<double>(getstr());
+Convert::operator double(void){
+    std::string str = this->_str;
+    double d = 0.0;
+    char *p = NULL;
+    d = strtod(str.c_str(), &p);
+    if (str.c_str() == p)
+        throw Convert::MyimpossibleConvert();
+    return static_cast<double>(d);
 }
 
-void Convert::printChar(void)
+void Convert::printlist(void)
 {
-  if ()
-
+    std::cout << "char: ";
+    try {
+        char c = static_cast<char>(*this);
+        std::cout << "\'" << c << "\'" << std::endl; 
+    }
+    catch (std::exception &e) {
+        std::cout << e.what() << std::endl;
+    }
+    
+    std::cout << "int: "; 
+    try {
+        int i =  static_cast<int>(*this);
+        std::cout << i << std::endl;
+    }
+    catch (std::exception &e) {
+        std::cout << e.what() << std::endl;
+    }
+    
+    std::cout << "float: "; 
+    try {
+         float f =  static_cast<float>(*this);
+         std::cout << std::setiosflags(std::ios::fixed) << std::setprecision(1);
+         std::cout << f << "f" << std::endl;
+    }
+    catch (std::exception &e) {
+        std::cout << e.what() << std::endl;
+    }
+    
+    std::cout << "double: "; 
+    try {
+        double d = static_cast<double>(*this);
+        std::cout << std::setiosflags(std::ios::fixed) << std::setprecision(1);
+        std::cout << d << std::endl;
+    }
+    catch (std::exception &e) {
+        std::cout << e.what() << std::endl;
+    }
+    
 }
-  
-char const *Convert::MyBadConvert::what() const throw() {
-    return " impossible ";
+
+char const *Convert::MyimpossibleConvert::what() const throw() {
+    return "impossible ";
 }
 char const *Convert::MydisplayConvert::what() const throw() {
-    return " Non displayable ";
+    return "Non displayable ";
 }
 
 

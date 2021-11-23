@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 15:19:12 by xuwang            #+#    #+#             */
-/*   Updated: 2021/11/23 16:28:26 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/11/23 19:34:26 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,11 @@
 #define CONVERT_HPP
 
 #include <iostream>
+#include <iomanip>
+#include <exception>
+#include <cstdlib>
+#include <stdint.h>
+#include <climits>
 
 class Convert
 {
@@ -22,24 +27,26 @@ class Convert
     public:
         Convert(void);
         Convert(Convert const &src);
+        Convert(std::string str);
         ~Convert(void);
         
         Convert &operator=(Convert const & rhs);
         
-        std::string getstr(void);
-        void convertChar(void)
-        void convertInt(void)
-        void convertFloat(void)
-        void convertDouble(void)
+        std::string const & getstr(void)const;
+        operator char(void);
+        operator int(void);
+        operator float(void);
+        operator double(void);
+        void printlist(void);
 
-        class MyBadConvert: pubic std::exception {
+        class MyimpossibleConvert: public std::exception {
             char const	*what() const throw();
-        }
-        class MydisplayConvert: pubic std::exception {
+        };
+        class MydisplayConvert: public std::exception {
             char const	*what() const throw();
-        }
+        };
     
-}
+};
 
 
 #endif
