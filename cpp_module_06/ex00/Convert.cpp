@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 15:19:10 by xuwang            #+#    #+#             */
-/*   Updated: 2021/11/23 19:49:00 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/11/23 19:50:11 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,13 @@ Convert::Convert(void) {}
 Convert::Convert(std::string str): _str(str){}
 Convert::Convert(Convert const &src){ *this = src;}
 Convert::~Convert(void){}
+
 Convert &Convert::operator=(Convert const & rhs){
     if (this == &rhs) return *this;
 	this->_str = rhs._str;
 	return *this;
 }
-// std::string const &Convert::getstr(void)const{
-//     return this->_str;
-// }
+
 
 Convert::operator char(void){
     std::string str = this->_str;
