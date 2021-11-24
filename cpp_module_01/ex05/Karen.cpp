@@ -6,21 +6,11 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/27 16:42:35 by xuwang            #+#    #+#             */
-/*   Updated: 2021/10/28 15:23:46 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/11/24 19:05:39 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Karen.hpp"
-
-// void (Karen::*complain)(void) {  //参数 返回值
-
-//     // complain = Karen::debug;
-//     // complain[1] = &Karen::info;
-//     // complain[2] = &Karen::warnin;
-//     // complain[3] = &Karen::error;
-    
-//     return ;
-// }
 
 Karen::Karen() {
     return;
@@ -61,23 +51,6 @@ void Karen::complain(std::string level) {
     
     std::string leVel[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
     
-    
-    // if (level == leVel[0]) {
-    //     std::cout << "DEBUG" << std::endl;
-    //     (this->*_complain[0])();
-    // }
-    // else if (level == leVel[1]) {
-    //      std::cout << "INFO" << std::endl;
-    //      (this->*_complain[1])();
-    // }
-    //  else if  (level == leVel[2]){
-    //       std::cout << "WARNING" << std::endl;
-    //     (this->*_complain[2])();
-    //  }
-    // else if  (level == leVel[3]) {
-    //      std::cout << "ERROR" << std::endl;
-    //      (this->*_complain[3])();
-    // }
 
     for(int i = 0; i < 4; i++) {
         if (leVel[i] == level) {
@@ -88,13 +61,3 @@ void Karen::complain(std::string level) {
     }
 }
     
-    
-   
-    // for(int i = 0; i < 4; i++){
-    //     if (complain[i] == level) {
-    //         this->*complain[i]();
-    //         std::cout << std::endl;
-	// 		return ;
-    //     }
-    // }
-    // levelPtr = level;
