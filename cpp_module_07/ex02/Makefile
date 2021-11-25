@@ -6,7 +6,30 @@
 #    By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/25 12:31:24 by xuwang            #+#    #+#              #
-#    Updated: 2021/11/25 12:31:25 by xuwang           ###   ########.fr        #
+#    Updated: 2021/11/25 12:33:41 by xuwang           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+CC 		= clang++
+CFLAGS 	= -Wall -Wextra -Werror -std=c++98
+
+NAME 	:= 
+SRCS    := main.cpp \
+		
+			
+OBJS := $(SRCS:%.cpp=%.o)
+
+$(NAME): $(OBJS)
+	$(CC) $(CFLAGS) $(OBJS) -o $@
+
+all: $(NAME)
+
+clean:	
+		rm -rf $(OBJS)
+
+fclean: clean
+		rm -rf $(NAME)
+
+re: fclean all
+
+.PHONY: all clean fclean re
