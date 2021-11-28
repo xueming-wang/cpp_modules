@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 12:31:21 by xuwang            #+#    #+#             */
-/*   Updated: 2021/11/28 16:11:04 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/11/28 17:47:25 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ class Array {
             this->_n = n;
         }
         Array<T>(Array const & src) {
-            this->_array = new T[src._n]; //creat _n of type T
-            this->_n = src._n;
-            for(unsigned int i; i < src._n; i++)
+            this->_array = new T[src.n()]; //creat _n of type T
+            this->_n = src.n();
+            for(unsigned int i; i < this->_n; i++)
                 this->_array[i] = src._array[i]; 
         }
         
@@ -42,9 +42,9 @@ class Array {
         Array<T> &operator=(Array const &rhs){
              if (this == &rhs)
                 return *this;
-            this->_array = new T[rhs._n];
-            this->_n = rhs._n;
-              for(unsigned int i; i < rhs._n; i++)
+            this->_array = new T[rhs.n()];
+            this->_n = rhs.n();
+              for(unsigned int i = 0; i < this->_n; i++)
                 this->_array[i] = rhs._array[i]; 
             return *this;
         }
