@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 12:59:23 by xuwang            #+#    #+#             */
-/*   Updated: 2021/11/24 13:43:41 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/11/28 14:56:25 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ Data::~Data(void){}
 Data &Data::operator=(Data const & rhs){
     if (this == &rhs)
 				return *this;
-		_c = rhs._c;
-		_i = rhs._i;
-		_d = rhs._d;
+		this->_c = rhs._c;
+		this->_i = rhs._i;
+		this->_d = rhs._d;
 		return *this;
 }
 

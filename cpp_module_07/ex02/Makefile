@@ -6,14 +6,14 @@
 #    By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/25 12:31:24 by xuwang            #+#    #+#              #
-#    Updated: 2021/11/25 12:33:41 by xuwang           ###   ########.fr        #
+#    Updated: 2021/11/28 14:24:01 by xuwang           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC 		= clang++
 CFLAGS 	= -Wall -Wextra -Werror -std=c++98
 
-NAME 	:= 
+NAME 	:= Array
 SRCS    := main.cpp \
 		
 			
