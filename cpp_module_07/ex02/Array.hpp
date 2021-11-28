@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 12:31:21 by xuwang            #+#    #+#             */
-/*   Updated: 2021/11/28 17:47:25 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/11/28 17:58:26 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ class Array {
         }
 
         class IndexIsLimite:public std::exception {
-                const char * what () const throw() { return "Indxt is limite!";}
+                const char * what () const throw() { return "ERROR: Indxt is limite!";}
         };        
     private:
         T *_array; //import quell type of array 
