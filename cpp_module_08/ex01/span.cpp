@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/28 20:23:50 by xuwang            #+#    #+#             */
-/*   Updated: 2021/11/29 22:32:02 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/11/29 22:38:55 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,10 @@ Span::~Span(void){}
 Span::Span(Span const &src) {*this = src;};
 
 void Span::addNumber(int nbr){
-    if (this->_add <= this->_n) {
-        this->myvector.push_back(nbr);
-        ++this->_add;
-    }
-    else
+    if (this->_add == this->_n)
         throw Span::cannotAddNum();
+    this->myvector.push_back(nbr);
+        ++this->_add;
 }
 
 Span &Span::operator=(Span const &rhs) {
