@@ -6,26 +6,52 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/28 20:23:52 by xuwang            #+#    #+#             */
-/*   Updated: 2021/11/28 21:01:20 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/11/29 22:13:37 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SPAN_HPP
 #define SPAN_HPP
 
-class span{
+#include <iostream>
+#include <vector>
+#include <exception>
+#include <algorithm>
+#include <iterator>
+
+
+class Span{
 
     public:
     
-        span(unsigned int N);
-        ~span(void);    
+        Span(unsigned int N);
+        Span(Span const &src);
+        ~Span(void);    
 
         void addNumber(int nbr);
         int shortestSpan();
         int longestSpan();
-    private:
+
+        Span &operator=(Span const &rhs);
+        class cannotAddNum:public std::exception {
+                const char * what () const throw();
+        };
+        class cannotFindShort:public std::exception {
+                const char * what () const throw();
+        };
+        class cannotFindLong:public std::exception {
+                const char * what () const throw();
+        };  
         
+    private:
+        std::vector<int> myvector;
         unsigned int _n;
-        span(void);
-}
+        unsigned int _add;
+        Span(void); //constructor as its only parameter
+        
+};
 #endif
+
+/* For operations that involve inserting or removing elements 
+at positions other than the end, they perform worse than the others,
+ and have less consistent iterators and references than lists*/
