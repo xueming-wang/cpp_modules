@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 17:26:25 by xuwang            #+#    #+#             */
-/*   Updated: 2021/11/07 18:00:41 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/12/01 18:28:29 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class ClapTrap
         ClapTrap(void);
         ClapTrap(std::string name);
         ClapTrap(ClapTrap const & src);
-        ~ClapTrap(void);
+        virtual ~ClapTrap(void);
         
         ClapTrap  &operator = (ClapTrap const &rhs);
         

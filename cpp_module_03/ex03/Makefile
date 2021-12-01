@@ -6,13 +6,13 @@
 #    By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/07 17:26:29 by xuwang            #+#    #+#              #
-#    Updated: 2021/11/07 17:27:11 by xuwang           ###   ########.fr        #
+#    Updated: 2021/12/01 18:56:51 by xuwang           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 CC 		= clang++
-CFLAGS 	= -Wall -Wextra -Werror -std=c++98
+CPPFLAGS 	= -Wall -Wextra -Werror -std=c++98
 
 NAME 	:= DiamondTrap
 SRCS    := main.cpp \
@@ -24,7 +24,7 @@ SRCS    := main.cpp \
 OBJS := $(SRCS:%.cpp=%.o)
 
 $(NAME): $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) -o $@
+	$(CC) $(CPPFLAGS) $(OBJS) -o $@
 
 all: $(NAME)
 

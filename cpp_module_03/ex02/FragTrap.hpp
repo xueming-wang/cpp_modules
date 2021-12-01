@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 18:27:55 by xuwang            #+#    #+#             */
-/*   Updated: 2021/11/08 18:40:34 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/12/01 18:29:41 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class FragTrap : public ClapTrap
         FragTrap(void);
         FragTrap(std::string name);
         FragTrap(FragTrap const &src);
-        ~FragTrap();
+        virtual ~FragTrap();
 
         FragTrap  &operator = (FragTrap const &rhs);
 

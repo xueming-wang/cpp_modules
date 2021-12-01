@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 14:07:16 by xuwang            #+#    #+#             */
-/*   Updated: 2021/12/01 16:42:19 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/12/01 18:45:35 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,10 @@ ClapTrap::~ClapTrap() {
 void ClapTrap::attack(std::string const & target) {
     if (this->_EnergyPoints <= 0)
         std::cout << this->_name << " doesn't have energy point" << std::endl;
-    else 
+    else {
         std::cout << "ClapTrap " << this->_name << " attack " << target << "," ;
+        this->_EnergyPoints -= 1;
+    }
 }
 
 void ClapTrap::takeDamage(unsigned int amount) {

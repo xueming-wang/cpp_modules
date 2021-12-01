@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 17:27:28 by xuwang            #+#    #+#             */
-/*   Updated: 2021/12/01 17:30:23 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/12/01 18:37:10 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ void ScavTrap::attack(std::string const &target){
     }
 }
 void ScavTrap::guardGate() {
+    if (this->_Hitpoints > 0)
     std::cout << "ScavTrap " << this->_name << " is in Gate keeper mode.!" << std::endl;
 }
 

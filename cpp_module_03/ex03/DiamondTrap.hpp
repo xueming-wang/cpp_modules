@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 18:48:38 by xuwang            #+#    #+#             */
-/*   Updated: 2021/11/08 19:01:41 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/12/01 18:28:45 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class DiamondTrap : public ScavTrap, public FragTrap
         DiamondTrap(void);
         DiamondTrap(std::string name);
         DiamondTrap(DiamondTrap const &src);
-        ~DiamondTrap();
+        virtual ~DiamondTrap();
 
         DiamondTrap &operator = (DiamondTrap const &rhs);
 
