@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 18:08:54 by xuwang            #+#    #+#             */
-/*   Updated: 2021/11/03 12:44:41 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/11/30 17:11:18 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ class Fixed {
 
     private:
 
-        int _fixe;
-        const static int bits;
+        int _fixe;  //la valeur a point fixe
+        const static int bits; //le nombre de bits fractionnels
        
     public:
 

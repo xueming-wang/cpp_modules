@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 18:09:06 by xuwang            #+#    #+#             */
-/*   Updated: 2021/11/03 12:44:27 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/11/30 18:40:08 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class Fixed {
 
     private:
 
-        int _fixe; //Un int pour stocker la valeur a point fixe
+        int _fixe; //valeur a point fixe
         const static int bits; 
        
     public:
@@ -31,12 +31,12 @@ class Fixed {
         Fixed(Fixed const &src); // constructeur par copie 
         ~Fixed(void);
     
-        Fixed   &operator = (Fixed const &rhs); //operator overloading运算符重载
+        Fixed   &operator = (Fixed const &rhs); 
     
-        float   toFloat(void) const; //qui convertit un nombres à point fixe en float.
-        int     toInt(void) const; //un nombres à point fixe en int.
-        int     getRawBits(void)const;  //它返回定点数的原始值。
-        void    setRawBits(int const raw); // qui set la valeur du nombre à point fixe.
+        float   toFloat(void) const; 
+        int     toInt(void) const; 
+        int     getRawBits(void)const; 
+        void    setRawBits(int const raw); 
         
 };
 

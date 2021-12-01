@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 14:07:16 by xuwang            #+#    #+#             */
-/*   Updated: 2021/11/07 17:49:30 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/12/01 16:42:19 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 ClapTrap::ClapTrap(void) {
     this->_name = "Unknow";
-    this->_Hitpoints = 10; //生命值
-    this->_EnergyPoints = 10; //能量点
-    this->_AttackDamage = 0; //攻击伤害点
+    this->_Hitpoints = 10;
+    this->_EnergyPoints = 10;
+    this->_AttackDamage = 0;
     std::cout << "ClapTrap constructor called" << std::endl;
     return;
 }
@@ -24,9 +24,9 @@ ClapTrap::ClapTrap(void) {
 ClapTrap::ClapTrap(std::string name) {
 
     this->_name = name;
-    this->_Hitpoints = 10; //生命值
-    this->_EnergyPoints = 10; //能量点
-    this->_AttackDamage = 0; //攻击伤害点
+    this->_Hitpoints = 10; 
+    this->_EnergyPoints = 10; 
+    this->_AttackDamage = 0; 
     std::cout << "ClapTrap constructor called" << std::endl;
     return;
 }

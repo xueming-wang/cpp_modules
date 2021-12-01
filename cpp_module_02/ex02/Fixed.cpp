@@ -6,25 +6,23 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 18:09:15 by xuwang            #+#    #+#             */
-/*   Updated: 2021/11/04 14:56:21 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/11/30 21:03:42 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
 int const Fixed::bits = 8;
-/* 
-**CONSTRUCTORS / DESTRUCTOR
-*/
+
 Fixed::Fixed(void): _fixe(0){
     return;
 }
 
-Fixed::Fixed(const int i):_fixe(i << Fixed::bits) {  //8位形式 后加0例如 1变成1.00000000
+Fixed::Fixed(const int i):_fixe(i << Fixed::bits) { 
      return;
 }
 
-Fixed::Fixed(const float f):_fixe(roundf(f * ((float)(1 << Fixed::bits)))){  //先乘以256
+Fixed::Fixed(const float f):_fixe(roundf(f * ((float)(1 << Fixed::bits)))){ 
       return;
 }
  
@@ -37,9 +35,6 @@ Fixed::~Fixed(void) {
      return;
 }
 
-/*
-** MEMBERS
-*/
 int Fixed::getRawBits(void)const {
     return this->_fixe;
 }
@@ -50,7 +45,7 @@ void Fixed::setRawBits(int const raw) {
 }
 
 float Fixed::toFloat(void) const {
-    return(((float)this->_fixe) / (float)(1 << Fixed::bits));   //除256
+    return(((float)this->_fixe) / (float)(1 << Fixed::bits));  
 }
 
 int Fixed::toInt(void) const {
@@ -128,8 +123,8 @@ Fixed &Fixed::operator=(Fixed const &rhs) {
 
     if (this == &rhs)
         return *this;
-    this->_fixe = rhs.getRawBits();
-    //this->setRawBits(rhs.getRawBits()); //set raw de b to this
+    //this->_fixe = rhs.getRawBits();
+    this->setRawBits(rhs.getRawBits()); //set raw de b to this
     return *this;
 }
 
@@ -156,7 +151,7 @@ Fixed   Fixed::operator--(int){  /* POST DECREMENT */
 
 std::ostream &operator << (std::ostream &o, Fixed const &a){
     
-    o << a.toFloat(); //show le nombre a x = x.getRawbites();
+    o << a.toFloat();
     return o;
 }
 

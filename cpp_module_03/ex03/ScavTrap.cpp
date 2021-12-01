@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 17:27:28 by xuwang            #+#    #+#             */
-/*   Updated: 2021/11/09 15:50:18 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/12/01 17:38:16 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,14 @@ ScavTrap::ScavTrap(ScavTrap const &src) {
 ScavTrap::~ScavTrap(void) {
     std::cout << "ScavTrap destructor called" << std::endl;
     return;
+}
+
+void ScavTrap::attack(std::string const &target){
+    if (this->_EnergyPoints <= 0)
+        std::cout << this->_name << " doesn't have energy point" << std::endl;
+    else {
+        std::cout << "ScavTrap " << this->_name << " ATTACK " << target << "," ;
+    }
 }
 
 void ScavTrap::guardGate() {

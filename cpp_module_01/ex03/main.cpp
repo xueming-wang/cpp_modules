@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/26 14:24:29 by xuwang            #+#    #+#             */
-/*   Updated: 2021/10/26 17:53:18 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/11/30 14:25:26 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int main() {
         
         HumanA bob("Bob", club); //with &ref 
         bob.attack();
-        club.setType("some other type of club");
+        club.setType("gun");
         bob.attack();
     }
     {

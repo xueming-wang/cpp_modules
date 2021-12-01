@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 17:27:26 by xuwang            #+#    #+#             */
-/*   Updated: 2021/11/08 18:33:06 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/12/01 17:42:32 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,14 @@ class ScavTrap : public ClapTrap
         ScavTrap(void);
         ScavTrap(std::string name);
         ScavTrap(ScavTrap const &src);
-        ~ScavTrap();
+        ~ScavTrap(void);
+
+        void attack(std::string const &target);
+        void guardGate();
 
         ScavTrap  &operator = (ScavTrap const &rhs);
 
-        void guardGate();
+    
 };
 
 

@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 17:27:28 by xuwang            #+#    #+#             */
-/*   Updated: 2021/11/08 18:33:01 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/12/01 17:33:32 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,13 @@ ScavTrap::~ScavTrap(void) {
     return;
 }
 
+void ScavTrap::attack(std::string const &target){
+    if (this->_EnergyPoints <= 0)
+        std::cout << this->_name << " doesn't have energy point" << std::endl;
+    else {
+        std::cout << "ScavTrap " << this->_name << " ATTACK " << target << "," ;
+    }
+}
 void ScavTrap::guardGate() {
     std::cout << this->_name << " is in Gate keeper mode.!" << std::endl;
 }

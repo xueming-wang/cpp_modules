@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 18:09:04 by xuwang            #+#    #+#             */
-/*   Updated: 2021/11/04 14:54:32 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/11/30 21:08:05 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,14 @@ Fixed::Fixed(void): _fixe(0){
     return;
 }
 
-Fixed::Fixed(const int i):_fixe(i << Fixed::bits) {  // int a fixe 8位形式 后加0例如 1变成1.00000000
+
+Fixed::Fixed(const int i):_fixe(i << Fixed::bits) {  
     std::cout << "Int constructor called" << std::endl;
      return;
 }
 
-Fixed::Fixed(const float f):_fixe(roundf(f * ((float)(1 << Fixed::bits)))){  //round 四舍五入先乘以256
+ //(arrondis) point fixe f*(float)256
+Fixed::Fixed(const float f):_fixe(roundf(f * ((float)(1 << Fixed::bits)))){  
      std::cout << "Float constructor called" << std::endl;
       return;
 }
@@ -45,8 +47,8 @@ Fixed &Fixed::operator = (Fixed const &rhs) {
     std::cout << "Assignation operator called" << std::endl;
     if (this == &rhs)
         return *this;
-    this->_fixe = rhs.getRawBits();
-    //this->setRawBits(rhs.getRawBits()); //set raw de b to this
+    //this->_fixe = rhs.getRawBits();
+    this->setRawBits(rhs.getRawBits()); //set raw de b to this
     return *this;
 }
 
@@ -59,17 +61,18 @@ void Fixed::setRawBits(int const raw) {
     return;
 }
 
-// un nombres à point fixe en float.
+
 float Fixed::toFloat(void) const {
-    return(((float)this->_fixe) / (float)(1 << Fixed::bits));   //除256
+    return(((float)this->_fixe) / (float)(1 << Fixed::bits));
 }
-// nombres à point fixe en int.
+
+// value point fixe to int.
 int Fixed::toInt(void) const {
     return( this->_fixe >> Fixed::bits); 
 }
 
-std::ostream &operator << (std::ostream &o, Fixed const &a){ //output stream  print class
-    
+ //output stream  print class
+std::ostream &operator<<(std::ostream &o, Fixed const &a){
     o << a.toFloat(); 
     return o;
 }

@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 18:09:28 by xuwang            #+#    #+#             */
-/*   Updated: 2021/11/07 13:53:40 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/11/30 21:05:15 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,12 @@
 #include "Fixed.hpp"
 
 int const Fixed::bits = 8;
-/* 
-**CONSTRUCTORS / DESTRUCTOR
-*/
+
 Fixed::Fixed(void): _fixe(0){
     return;
 }
-
-Fixed::Fixed(const int i):_fixe(i << Fixed::bits) {  //8位形式 后加0例如 1变成1.00000000
+ //8位形式 后加0例如 1变成1.00000000
+Fixed::Fixed(const int i):_fixe(i << Fixed::bits) { 
      return;
 }
 //fixed_point_value = round(floating_point_value * scaling_factor) 2^8
