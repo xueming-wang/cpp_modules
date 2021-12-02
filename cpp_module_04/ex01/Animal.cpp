@@ -6,18 +6,15 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/14 17:09:58 by xuwang            #+#    #+#             */
-/*   Updated: 2021/11/15 16:40:15 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/12/02 16:48:27 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//为什么用神拷贝 指针或者引用来说 那么拷贝后的物体的指针也和原来的指针指向的是同一个对象，
-//是针对指针的，浅拷贝是只拷贝指针地址，意思是浅拷贝指针都指向同一个内存空间，当原指针地址所指空间被释放，那么浅拷贝的指针全部失效。
-//深拷贝是先申请一块跟被拷贝数据一样大的内存空间，把数据复制过去。这样拷贝多少次，就有多少个不同的内存空间，干扰不到对方。
 #include "Animal.hpp"
 /*
 Brain
 */
-Brain::Brain() { //创建一个大脑穿进去三个想法到idea;
+Brain::Brain() {
     std::cout << "Brain constructor called" << std::endl;
     
     const std::string brain[] = {"cry ", "small ", "angry "};
@@ -100,33 +97,33 @@ Dog
 */
 Dog::Dog(): Animal("Dog"){
     std::cout << "Dog constructor called" << std::endl;
-    this->a = new Brain();
+    this->_dog = new Brain();
     return;
     
 }
 
 Dog::Dog(Dog const & src): Animal(src) {
     std::cout << "Dog assignment constructor" << std::endl;
-	this->a = new Brain(*(src.a));
+	this->_dog = new Brain(*(src._dog));
 	return ;
 }
 Dog::~Dog() {
     std::cout << "Dog destructor called" << std::endl;
-    delete this->a;
+    delete this->_dog;
     return ;
 }
 
 Brain *Dog::getBrain()const {
-    return this->a;
+    return this->_dog;
 }
 
 Dog  &Dog::operator = (Dog const &rhs){
     if (this == &rhs)
         return *this;
-    if (this->a)
-        delete this->a;
+    if (this->_dog)
+        delete this->_dog;
     this->type = rhs.type;
-    this->a = new Brain(*(rhs.a));//!!!!!
+    this->_dog = new Brain(*(rhs._dog));
     return *this;
 }
 
@@ -138,19 +135,19 @@ CAT
 */
 Cat::Cat(): Animal("Cat") {
     std::cout << "Cat constructor called" << std::endl;
-    this->b = new Brain();
+    this->_cat = new Brain();
     return ;
 }
 
-Cat:: Cat(Cat const & src): Animal(src) {  //deep copy
+Cat:: Cat(Cat const & src): Animal(src) { 
     std::cout << "Cat assignment constructor" << std::endl;
-    this->b = new Brain(*(src.b));
+    this->_cat = new Brain(*(src._cat));
 	return ;
 }
 
 Cat::~Cat(){
     std::cout << "Cat destructor called" << std::endl;
-    delete this->b;
+    delete this->_cat;
     return ;
 }
 
@@ -159,15 +156,15 @@ void Cat::makeSound()const {
 }
 
 Brain *Cat::getBrain()const {
-    return this->b;
+    return this->_cat;
 }
 
 Cat  &Cat::operator = (Cat const &rhs){
     if (this == &rhs)
         return *this;
-    if (this->b)
-        delete this->b;
+    if (this->_cat)
+        delete this->_cat;
     this->type = rhs.type;
-    this->b = new Brain(*(rhs.b));//!!!!!
+    this->_cat = new Brain(*(rhs._cat));
     return *this;
 }

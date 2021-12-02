@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 17:17:52 by xuwang            #+#    #+#             */
-/*   Updated: 2021/11/15 17:49:35 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/12/02 17:08:55 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ class Brain
         std::string getIdea(int i)const;
         void setIdea(std::string idea, int i);
 };
-/*Abstract classes*/
+
+/*Abstract classes is interfaces(contains a fonction virtuel）*/
 class  Animal
 {
     protected:

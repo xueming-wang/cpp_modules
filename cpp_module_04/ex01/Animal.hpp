@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/14 17:10:16 by xuwang            #+#    #+#             */
-/*   Updated: 2021/11/15 18:59:01 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/12/02 16:34:56 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ class  Animal
 class Dog : public Animal
 {  
     private:
-        Brain *a;
+        Brain *_dog;
         
     public:
         Dog(void);
@@ -68,7 +68,7 @@ class Dog : public Animal
 class Cat : public Animal
 {
     private:
-        Brain *b;
+        Brain *_cat;
 
     public:
         Cat(void);

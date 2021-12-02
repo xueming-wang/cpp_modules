@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 16:54:24 by xuwang            #+#    #+#             */
-/*   Updated: 2021/11/16 17:49:43 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/12/02 19:23:12 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ MateriaSource &	 MateriaSource::operator=(MateriaSource const & rhs){
         
 void  MateriaSource::learnMateria(AMateria* m){
     if (!m) {
-        std::cout << "m no exist!" << std::endl;
+        std::cout << "Amateria " << m << " no exist!" << std::endl;
         return;
     }
     for(int i = 0; i < SOURCE; i++) {
@@ -68,5 +68,6 @@ AMateria *MateriaSource::createMateria(std::string const & type){
         if (this->_source[i] != NULL && this->_source[i]->getType() == type)
             return this->_source[i]->clone();
     }
+    std::cout << "ERROR: no type, cannot create materia!" << std::endl;
     return NULL;
 }

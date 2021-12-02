@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 17:17:48 by xuwang            #+#    #+#             */
-/*   Updated: 2021/11/15 17:31:59 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/12/02 20:37:52 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,24 @@
 
 int main() 
 {
+   
     Animal *animal[4];
     
     for (int i = 0; i < 4; i++){
-        if (i % 2 == 0)
+        if (i % 2 == 0) {
             animal[i] = new Dog();
-        else
+            std::cout << std::endl;
+        }
+        else {
             animal[i] = new Cat();
+            std::cout << std::endl;
+        }
     }
     for (int i = 0; i < 4; i++){
             animal[i]->makeSound();
     }
     std::cout << std::endl;
+    
    
     /*deep copy*/
     std::cout << "-------Deep copy------" << std::endl;

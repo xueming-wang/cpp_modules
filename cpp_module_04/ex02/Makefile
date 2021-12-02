@@ -6,11 +6,11 @@
 #    By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/15 17:17:54 by xuwang            #+#    #+#              #
-#    Updated: 2021/12/01 20:04:17 by xuwang           ###   ########.fr        #
+#    Updated: 2021/12/02 14:03:01 by xuwang           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC 		= clang++
+CC 		= c++
 CPPFLAGS 	= -Wall -Wextra -Werror -std=c++98
 
 NAME 	:= Animal

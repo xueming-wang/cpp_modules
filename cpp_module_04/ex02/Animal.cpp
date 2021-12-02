@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 17:17:50 by xuwang            #+#    #+#             */
-/*   Updated: 2021/11/15 17:29:14 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/12/02 15:00:36 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -161,6 +161,6 @@ Cat  &Cat::operator = (Cat const &rhs){
     if (this->b)
         delete this->b;
     this->type = rhs.type;
-    this->b = new Brain(*(rhs.b));//!!!!!
+    this->b = new Brain(*(rhs.b));
     return *this;
 }

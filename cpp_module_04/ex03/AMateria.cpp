@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 17:42:36 by xuwang            #+#    #+#             */
-/*   Updated: 2021/11/17 15:54:47 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/12/02 18:05:43 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ AMateria &	AMateria::operator=(AMateria const & rhs){
 std::string const & AMateria::getType() const{  //Returns the materia type
     return this->_type;
 }
-void AMateria::use(ICharacter& target){ //!!!!!!!!!!!!!!!
+void AMateria::use(ICharacter& target){ 
     std::cout << target.getName() << std::endl; 
 }
 
@@ -48,7 +48,7 @@ Ice &	Ice::operator=(Ice const & rhs){
     this->_type = rhs._type;
     return *this;
 }
-AMateria* Ice::clone() const { //!!!!!!!!!
+AMateria* Ice::clone() const { //clone ice
     return (new Ice());
 }
 void Ice::use(ICharacter& target) {
@@ -69,7 +69,7 @@ Cure &	Cure::operator=(Cure const & rhs){
     this->_type = rhs._type;
     return *this;
 }
-AMateria* Cure::clone() const { //!!!!!!!!
+AMateria* Cure::clone() const {  //clone cure
     return (new Cure());
 }
 void Cure::use(ICharacter& target) {
