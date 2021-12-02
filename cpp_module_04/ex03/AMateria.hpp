@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 17:42:38 by xuwang            #+#    #+#             */
-/*   Updated: 2021/12/02 18:04:03 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/12/02 21:03:49 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include <iostream>
 
 class ICharacter;
-
+/*abstract class*/
 class AMateria
 {
     protected:
@@ -31,7 +31,7 @@ class AMateria
         AMateria &	operator=(AMateria const & rhs);
         
         std::string const & getType() const; //Returns the materia type
-        virtual AMateria* clone() const = 0;  /* pure virtual function and  Polymorphis虚函数和多态*/
+        virtual AMateria* clone() const = 0;  /* pure virtual function (interface)*/
         virtual void use(ICharacter& target);
 };
 
