@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 18:34:56 by xuwang            #+#    #+#             */
-/*   Updated: 2021/11/21 15:07:38 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/12/03 20:48:55 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,9 +68,8 @@ bool Form::getsigne(void)const{
 }
 
 void Form::beSigned(Bureaucrat const &a){
-    if (a.getGrade() < this->_signeGrade) //{
-        //std::cout << "signegrade !!!!!"<< this->_signeGrade << std::endl;
-        this->_signe = true; //}
+    if (a.getGrade() <= this->_signeGrade)
+        this->_signe = true; 
     else
         throw GradeTooLowException();
 }
@@ -85,7 +84,7 @@ const char *Form::NotSignedException::what() const throw() {
      return "Form is not signe!" ;
 }
 std::ostream & operator<<(std::ostream & o, Form const & i){
-     o << i.getName() << " signe is: " << i.getsigne() << " ,signeGrade is: " << i.getSigneGrade();
+     o << i.getName() << " signe is: " << (i.getsigne()? "signed":"unsigned")  << " ,signeGrade is: " << i.getSigneGrade();
      o << " ,ExecGrade is: " << i.getExecGrade() <<  std::endl;
     return o;
 }

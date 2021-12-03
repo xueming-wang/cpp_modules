@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 18:34:56 by xuwang            #+#    #+#             */
-/*   Updated: 2021/11/18 14:33:15 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/12/03 20:48:44 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,20 +21,20 @@ Form::Form(void):
 
 Form::Form(Form const &src):
     _name(src.getName()),
-    _execGrade(src.getExecGrade()),
-    _signeGrade(src.getSigneGrade()){
+    _signeGrade(src.getSigneGrade()),
+    _execGrade(src.getExecGrade()){
         *this = src;
 }
     
-Form::Form(std::string name, int signeGrade, int execGrade):
+Form::Form(std::string const &name, int const signeGrade, int const execGrade):
     _name(name),
+    _signe(false),
     _signeGrade(signeGrade),
-    _execGrade(execGrade),
-    _signe(false){
+    _execGrade(execGrade) {
     if (signeGrade > 150 || execGrade > 150)
-        throw GradeTooHighException();
+        throw GradeTooLowException();
     if (signeGrade < 1 || execGrade < 1)
-        throw GradeTooLowException();   
+        throw GradeTooHighException();   
 }
 
 Form::~Form(void){}
@@ -68,8 +68,8 @@ bool Form::getsigne(void)const{
     return (this->_signe);
 }
 
-void Form::beSigned(Bureaucrat const &a){
-    if (a.getGrade() < this->_signeGrade)
+void Form::beSigned(Bureaucrat const &a){//确认签名登记
+    if (a.getGrade() <= this->_signeGrade)
         this->_signe = true;
     else
         throw GradeTooLowException();
@@ -83,7 +83,7 @@ const char *Form::GradeTooLowException::what() const throw() {
 }
 
 std::ostream & operator<<(std::ostream & o, Form const & i){
-     o << i.getName() << " signe is: " << i.getsigne() << " ,signeGrade is: " << i.getSigneGrade();
+     o << i.getName() << " signe is: " << (i.getsigne()? "signed":"unsigned")  << " ,signeGrade is: " << i.getSigneGrade();
      o << " ,ExecGrade is: " << i.getExecGrade() <<  std::endl;
     return o;
 }

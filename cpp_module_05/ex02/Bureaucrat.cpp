@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 18:35:05 by xuwang            #+#    #+#             */
-/*   Updated: 2021/11/21 15:09:54 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/12/03 20:44:17 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,11 @@ Bureaucrat::Bureaucrat(void):_name("Unknow"), _grade(1) {}
 Bureaucrat::Bureaucrat(Bureaucrat const &src) {
     *this = src;
 }
-Bureaucrat::Bureaucrat(std::string name, int grade){
-    this->_name = name;
+Bureaucrat::Bureaucrat(std::string const &name, int grade):_name(name){
     if (grade < 1)
-        throw Bureaucrat::GradeTooLowException();
-    else if (grade > 150)
         throw Bureaucrat::GradeTooHighException();
+    else if (grade > 150)
+        throw Bureaucrat::GradeTooLowException();
     this->_grade = grade;
 }
 Bureaucrat::~Bureaucrat(void) {}
@@ -47,7 +46,8 @@ Bureaucrat &Bureaucrat::operator=(Bureaucrat const & rhs){
     if (this == &rhs)
         return *this;
     this->_grade = rhs._grade;
-    this->_name = rhs._name;
+    std::string *tmp_name = (std::string *)&this->_name;
+	*tmp_name = rhs.getName();
     return *this;
 }
 
@@ -65,7 +65,7 @@ std::ostream & operator<<(std::ostream & o, Bureaucrat const & i){
 void Bureaucrat::signForm(Form & a)const{
     try {
         a.beSigned(*this);  //把singe 放进去 
-            std::cout << this->_name << " signe " << a.getName() << std::endl;
+            std::cout << this->_name << " signe " <<  (a.getsigne()? "signed":"unsigned") << std::endl;
     }
     catch(std::exception &e) {//或者太low
          std::cout << this->_name << " cannot sign because " << e.what() << std::endl;
