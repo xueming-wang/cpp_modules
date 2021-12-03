@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/14 17:09:58 by xuwang            #+#    #+#             */
-/*   Updated: 2021/12/02 16:48:27 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/12/03 16:29:44 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Brain::Brain() {
     
     const std::string brain[] = {"cry ", "small ", "angry "};
     for(int i = 0; i < IDEAS_NUM; i++){
-        this->ideas[i] = brain[rand() % (sizeof(brain) / sizeof(std::string))];
+        this->ideas[i] = brain[rand() % 3];
         std::cout << this->ideas[i];
     }
     std::cout << std::endl;
