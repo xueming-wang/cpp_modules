@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 14:14:09 by xuwang            #+#    #+#             */
-/*   Updated: 2021/11/24 16:23:37 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/12/05 20:58:23 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ void identify_ptr(Base * p){
 void identify_ref( Base & p){
     try {
         A &a = dynamic_cast<A &>(p);
+        (void)a;
         std::cout << "A" << std::endl;
     }
     catch (std::bad_cast &bc) {
@@ -46,6 +47,7 @@ void identify_ref( Base & p){
     }
     try {
         B &b = dynamic_cast<B &>(p);
+        (void)b;
         std::cout << "B" << std::endl;
     }
     catch (std::bad_cast &bc) {
@@ -53,6 +55,7 @@ void identify_ref( Base & p){
     }
     try {
         C &c = dynamic_cast<C &>(p);
+        (void)c;
         std::cout << "C" << std::endl;
     }
     catch (std::bad_cast &bc) {
