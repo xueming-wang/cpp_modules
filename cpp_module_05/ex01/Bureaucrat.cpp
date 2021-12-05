@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 18:35:05 by xuwang            #+#    #+#             */
-/*   Updated: 2021/12/03 20:45:07 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/12/05 13:39:57 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ std::ostream & operator<<(std::ostream & o, Bureaucrat const & i){
     return o;
 }
 
-void Bureaucrat::signForm(Form & a)const{//登记到了signegrade就签名
+void Bureaucrat::signForm(Form & a)const{
     try {
         a.beSigned(*this);
             std::cout << this->_name << " signe " << a.getName() << std::endl;

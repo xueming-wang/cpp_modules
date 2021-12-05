@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 18:35:05 by xuwang            #+#    #+#             */
-/*   Updated: 2021/12/03 20:44:17 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/12/05 14:37:08 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,14 +33,14 @@ int Bureaucrat::getGrade()const {
     return this->_grade;
 }
 void  Bureaucrat::incGrade(void){
-    if (this->_grade == 150)
+    if (this->_grade == 1)
         throw Bureaucrat::GradeTooHighException();
-    this->_grade += 1;
+    this->_grade -= 1;
 }
 void  Bureaucrat::decGrade(void){
-    if (this->_grade == 1)
+     if (this->_grade == 150)
         throw Bureaucrat::GradeTooLowException();
-    this->_grade -= 1;
+    this->_grade += 1;
 }
 Bureaucrat &Bureaucrat::operator=(Bureaucrat const & rhs){
     if (this == &rhs)
@@ -64,10 +64,10 @@ std::ostream & operator<<(std::ostream & o, Bureaucrat const & i){
 
 void Bureaucrat::signForm(Form & a)const{
     try {
-        a.beSigned(*this);  //把singe 放进去 
-            std::cout << this->_name << " signe " <<  (a.getsigne()? "signed":"unsigned") << std::endl;
+        a.beSigned(*this);
+            std::cout << this->_name << " signe " <<  a.getName() << std::endl;
     }
-    catch(std::exception &e) {//或者太low
+    catch(std::exception &e) {
          std::cout << this->_name << " cannot sign because " << e.what() << std::endl;
     }
 }

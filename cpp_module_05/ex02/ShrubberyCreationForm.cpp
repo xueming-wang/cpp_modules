@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 16:26:58 by xuwang            #+#    #+#             */
-/*   Updated: 2021/11/21 15:17:42 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/12/05 14:30:09 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,4 +69,4 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const{
         
     infile.close();
     outfile.close();
-;}
+}

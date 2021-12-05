@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 18:34:58 by xuwang            #+#    #+#             */
-/*   Updated: 2021/11/19 17:50:18 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/12/05 14:27:02 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ class Form {
     private:
         std::string const _name;
         bool  _signe;
-        int  const _signeGrade;//签字等级
-        int  const _execGrade;//执行等级
+        int  const _signeGrade;
+        int  const _execGrade;
         
     public:
         Form(void);
@@ -39,8 +39,6 @@ class Form {
         bool getsigne(void)const;
         
         void beSigned(Bureaucrat const &);
-        bool getSignForm(void)const;  //new
-        void setSignForm(void)const; //new
     
         class GradeTooHighException: public std::exception {
              const char * what () const throw ();

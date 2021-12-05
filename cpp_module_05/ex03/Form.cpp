@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 18:34:56 by xuwang            #+#    #+#             */
-/*   Updated: 2021/12/03 20:37:31 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/12/05 14:40:42 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,16 @@ Form::Form(void):
 
 Form::Form(Form const &src):
     _name(src.getName()),
-    _execGrade(src.getExecGrade()),
-    _signeGrade(src.getSigneGrade()){
+    _signeGrade(src.getSigneGrade()),
+    _execGrade(src.getExecGrade()){
         *this = src;
 }
     
 Form::Form(std::string name, int signeGrade, int execGrade):
     _name(name),
+    _signe(false),
     _signeGrade(signeGrade),
-    _execGrade(execGrade),
-    _signe(false){
+    _execGrade(execGrade){
     if (signeGrade > 150 || execGrade > 150)
         throw GradeTooHighException();
     if (signeGrade < 1 || execGrade < 1)
@@ -68,7 +68,7 @@ bool Form::getsigne(void)const{
 }
 
 void Form::beSigned(Bureaucrat const &a){
-    if (a.getGrade() < this->_signeGrade) 
+    if (a.getGrade() <= this->_signeGrade) 
         this->_signe = true;
     else
         throw GradeTooLowException();

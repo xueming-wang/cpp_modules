@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 18:34:56 by xuwang            #+#    #+#             */
-/*   Updated: 2021/12/03 20:48:44 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/12/05 14:15:58 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ bool Form::getsigne(void)const{
     return (this->_signe);
 }
 
-void Form::beSigned(Bureaucrat const &a){//确认签名登记
+void Form::beSigned(Bureaucrat const &a){
     if (a.getGrade() <= this->_signeGrade)
         this->_signe = true;
     else
