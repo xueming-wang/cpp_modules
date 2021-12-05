@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 15:19:12 by xuwang            #+#    #+#             */
-/*   Updated: 2021/11/23 19:34:26 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/12/05 20:43:25 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ class Convert
         Convert &operator=(Convert const & rhs);
         
         std::string const & getstr(void)const;
-        operator char(void);
+        operator char(void);//Automatic conversion
         operator int(void);
         operator float(void);
         operator double(void);

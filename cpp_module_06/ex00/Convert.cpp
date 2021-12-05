@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 15:19:10 by xuwang            #+#    #+#             */
-/*   Updated: 2021/11/23 19:50:11 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/12/05 20:46:44 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ Convert &Convert::operator=(Convert const & rhs){
 	return *this;
 }
 
-
 Convert::operator char(void){
     std::string str = this->_str;
     long l = 0;
@@ -36,6 +35,7 @@ Convert::operator char(void){
         throw Convert::MydisplayConvert();
     return static_cast<char>(l);  //60显示 < 
 }
+
 Convert::operator int(void){
     std::string str = this->_str;
     long l = 0;
@@ -46,6 +46,7 @@ Convert::operator int(void){
          throw Convert::MyimpossibleConvert();
     return static_cast<int>(l);
 }
+
 Convert::operator float(void){
     std::string str = this->_str;
     float f = 0.0f;
@@ -55,6 +56,7 @@ Convert::operator float(void){
         throw Convert::MyimpossibleConvert();
     return static_cast<float>(f);
 }
+
 Convert::operator double(void){
     std::string str = this->_str;
     double d = 0.0;
@@ -69,6 +71,7 @@ void Convert::printlist(void)
 {
     std::cout << "char: ";
     try {
+        //char c = (*this);
         char c = static_cast<char>(*this);
         std::cout << "\'" << c << "\'" << std::endl; 
     }
