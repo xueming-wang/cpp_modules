@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 12:31:21 by xuwang            #+#    #+#             */
-/*   Updated: 2021/11/28 17:58:26 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/12/06 19:35:46 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,53 +18,57 @@
 
 template < typename T >
 class Array {
+    private:
+        T *_array;
+        unsigned int _size;
+    
     public:
         Array<T>(void) {
             this->_array = new T[0];
-            this->_n = 0;
+            this->_size = 0;
         };
         Array<T>(unsigned int n) {
             this->_array = new T[n];
-            this->_n = n;
+            this->_size = n;
         }
         Array<T>(Array const & src) {
-            this->_array = new T[src.n()]; //creat _n of type T
-            this->_n = src.n();
-            for(unsigned int i; i < this->_n; i++)
+            /* deep copy :modifying one of the two arrays after copy
+             won’t affect anything in the other array.*/
+            this->_array = new T[src.size()];
+            this->_size = src.size();
+            for(unsigned int i = 0; i < this->_size; i++)
                 this->_array[i] = src._array[i]; 
-        }
-        
-        ~Array<T>(void){
-            if (this->_array)
-                delete[] this->_array;
         }
 
         Array<T> &operator=(Array const &rhs){
              if (this == &rhs)
                 return *this;
-            this->_array = new T[rhs.n()];
-            this->_n = rhs.n();
-              for(unsigned int i = 0; i < this->_n; i++)
+            this->_array = new T[rhs.size()];
+            this->_size = rhs.size();
+              for(unsigned int i = 0; i < this->_size; i++)
                 this->_array[i] = rhs._array[i]; 
             return *this;
         }
+           
+        ~Array<T>(void){
+            if (this->_array)
+                delete[] this->_array;
+        }
  
         T &operator[](unsigned int index){   //chose one of array
-            if (index >= this->_n)
+            if (index >= this->_size)
                 throw Array::IndexIsLimite();
             return(this->_array[index]);
         }
 
-        unsigned int const& n(void) const {
-            return this->_n;
+        unsigned int const& size(void) const {
+            return this->_size;
         }
 
         class IndexIsLimite:public std::exception {
-                const char * what () const throw() { return "ERROR: Indxt is limite!";}
+                const char * what () const throw() 
+                { return "ERROR: Indxt is limite!";}
         };        
-    private:
-        T *_array; //import quell type of array 
-        unsigned int _n;
     
 };
 #endif
