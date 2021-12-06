@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 12:59:25 by xuwang            #+#    #+#             */
-/*   Updated: 2021/11/24 13:58:31 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/12/06 12:42:59 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,9 @@ class Data {
         int const &getInt(void)const;
         double const &getDouble(void)const;
 };
-//将对象变成字节流的形式传出去。在网络上传送对象的字节序列
-uintptr_t serialize(Data* ptr);  //unsigned long int
+/*uintptr_t：unsigned integer type capable of holding a pointer
+serialize :l'objet est converti dans un format qui peut être conservé ou transféré.*/
+uintptr_t serialize(Data* ptr); 
 Data* deserialize(uintptr_t raw);
 
 #endif

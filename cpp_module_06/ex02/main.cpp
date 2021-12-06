@@ -6,20 +6,19 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 14:13:46 by xuwang            #+#    #+#             */
-/*   Updated: 2021/11/24 16:21:10 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/12/06 13:04:12 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Base.hpp"
 
 int main() {
-    Base *base = generate();
-    Base &base2 = *base;
+
+    srand(time(NULL));
+    Base *base = generate(); //creer A or B or C;
     
-    std::cout << "identift by pointer" << std::endl;
-    identify_ptr(base);
-    std::cout << "identift by reference" << std::endl;
-    identify_ref(base2);
+    identify_ptr(base); //check print A or B or C;
+    identify_ref(*base); //check A or B or C;
 
     delete base;
     return 0;

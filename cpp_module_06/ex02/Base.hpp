@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 14:14:07 by xuwang            #+#    #+#             */
-/*   Updated: 2021/11/24 16:15:23 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/12/06 12:45:51 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 
 #include <iostream>
 #include <cstdlib>
-//dynamic_cast在将父类cast到子类时，父类必须要有虚函数
+/*dynamic_cast: Lorsque la classe parent convertit en classe enfant,
+ la classe parent doit avoir des fonctions virtuelles*/
 class Base
 {
     public:

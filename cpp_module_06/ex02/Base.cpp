@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 14:14:09 by xuwang            #+#    #+#             */
-/*   Updated: 2021/12/05 20:58:23 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/12/06 13:00:08 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@ Base::~Base(void){}
 
 Base * generate(void){
     
-    int i = rand() % 3;
+    int i = rand() % 3; //Retour aléatoire
+    std::cout << rand() << std::endl;
     if (i == 1)
         return new A();
     else if (i == 0)
@@ -25,18 +26,16 @@ Base * generate(void){
         return new C();
 }
 
-void identify_ptr(Base * p){
+void identify_ptr(Base * p){ //check p is A/B/C
    
-    Base *base;
-    
-    if ((base = dynamic_cast<A *>(p)) != NULL)  //不等于null说明转换成功
+    if (dynamic_cast<A *>(p) != NULL) //Conversion réussie
         std::cout << "A" << std::endl;
-    if ((base = dynamic_cast<B *>(p))!= NULL)
+    if (dynamic_cast<B *>(p) != NULL)
         std::cout << "B" << std::endl;
-    if ((base = dynamic_cast<C *>(p)) != NULL)
+    if (dynamic_cast<C *>(p) != NULL)
         std::cout << "C" << std::endl;
 }
-void identify_ref( Base & p){
+void identify_ref(Base & p){ //check reussie not NULL
     try {
         A &a = dynamic_cast<A &>(p);
         (void)a;
@@ -45,6 +44,7 @@ void identify_ref( Base & p){
     catch (std::bad_cast &bc) {
         std::cout <<  "A " << bc.what() << std::endl;
     }
+    
     try {
         B &b = dynamic_cast<B &>(p);
         (void)b;
@@ -53,6 +53,7 @@ void identify_ref( Base & p){
     catch (std::bad_cast &bc) {
         std::cout <<  "B: " << bc.what() << std::endl;
     }
+    
     try {
         C &c = dynamic_cast<C &>(p);
         (void)c;

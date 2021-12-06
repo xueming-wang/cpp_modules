@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 15:19:10 by xuwang            #+#    #+#             */
-/*   Updated: 2021/12/05 20:46:44 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/12/06 12:29:24 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,13 @@ Convert::operator char(void){
     std::string str = this->_str;
     long l = 0;
     char *p = NULL;
-    
-    l = strtol(str.c_str(), &p, 10);  //strtol() 字符串char *不能转化成long  
-    if (str.c_str() == p)                //表示不能转化为long 
+    /*strlol: char* -> long ,c_str() -> const char* */
+    l = strtol(str.c_str(), &p, 10); 
+    if (str.c_str() == p) 
         throw Convert::MyimpossibleConvert();
-    if (l < 32 || l > 126)      //1-31，127没有字符可以显示
+    if (l < 32 || l > 126)
         throw Convert::MydisplayConvert();
-    return static_cast<char>(l);  //60显示 < 
+    return static_cast<char>(l);
 }
 
 Convert::operator int(void){
