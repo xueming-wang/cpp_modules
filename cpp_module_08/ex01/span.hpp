@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/28 20:23:52 by xuwang            #+#    #+#             */
-/*   Updated: 2021/11/29 22:13:37 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/12/07 19:36:08 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@
 class Span{
 
     public:
-    
         Span(unsigned int N);
         Span(Span const &src);
         ~Span(void);    
@@ -42,16 +41,16 @@ class Span{
         class cannotFindLong:public std::exception {
                 const char * what () const throw();
         };  
+        std::vector<int> &getmyvector();
+        // void inc_alreadyadd();
+
+        void generate(unsigned int n);
         
     private:
         std::vector<int> myvector;
         unsigned int _n;
-        unsigned int _add;
+        unsigned int _alreadyadd;
         Span(void); //constructor as its only parameter
-        
+
 };
 #endif
-
-/* For operations that involve inserting or removing elements 
-at positions other than the end, they perform worse than the others,
- and have less consistent iterators and references than lists*/
