@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/28 18:52:53 by xuwang            #+#    #+#             */
-/*   Updated: 2021/12/07 17:50:15 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/12/08 13:30:22 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 template <typename T>
 int easyfind (T container, int find) {
     typename T::iterator it = std::find(container.begin(), container.end(), find);
-    if (it != container.end()) //容器类名::iterator  迭代器名;
+    if (it != container.end())
         return *it;
     else
         throw std::exception();                

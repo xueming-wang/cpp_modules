@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/29 22:44:38 by xuwang            #+#    #+#             */
-/*   Updated: 2021/12/07 20:36:55 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/12/08 13:33:46 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@
 #include <stack>
 #include <deque>
 
-/*自己做一个iterator 给stack*/
+
 template <typename T, typename Container = std::deque<T> >
-class MutantStack: public std::stack<T, Container>  //继承stack
+class MutantStack: public std::stack<T, Container>  //heritage of stack
 {
     public:
         MutantStack(void): std::stack<T, Container>() {};
