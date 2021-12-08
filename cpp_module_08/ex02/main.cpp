@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/29 22:34:38 by xuwang            #+#    #+#             */
-/*   Updated: 2021/12/07 20:59:09 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/12/08 13:04:47 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 int main()
 {
     {
-         std::cout << "--------MutantStack test--------" << std::endl;
+        std::cout << "--------MutantStack test--------" << std::endl;
         MutantStack<int> mstack;
         
         mstack.push(5);
@@ -40,39 +40,27 @@ int main()
             std::cout << *it << std::endl;
             ++it;
         }
-        std::stack<int> s(mstack);
-        std::cout << "top is :" << s.top() << std::endl;
-    }
-    {
+        
+        std::cout << "--------par copy test--------" << std::endl;
+        MutantStack<int> s = mstack ;
+        std::cout << "top is :" << s.top() << std::endl << std::endl;
+        s.push(-1);
+        s.push(21);
+        s.push(42);
+        MutantStack<int>::iterator its= s.begin(); 
+        MutantStack<int>::iterator ites = s.end();
+        while (its != ites) {
+            std::cout << *its<< std::endl;
+            ++its;
+        }
 
-        std::cout << "--------comparer List test--------" << std::endl;
-	    std::list<int> lst;
-	
-        lst.push_back(5);
-        lst.push_back(17);
-        
-        std::cout << "Top: " << lst.back() << std::endl;
-
-        lst.pop_back();
-
-        std::cout << "Size: " << lst.size() << std::endl<< std::endl;
-        
-        lst.push_back(3);
-        lst.push_back(5);
-        lst.push_back(737);
-        lst.push_back(0);
-        
-        std::list<int>::iterator it = lst.begin();
-        std::list<int>::iterator ite = lst.end();
-        ++it;
-        --it;
-        std::cout << "list:" << std::endl;
-        while (it != ite) {
-             std::cout << *it << std::endl;
-            ++it;
-	    }
-        
-       
+        std::cout << std::endl;
+        MutantStack<int>::reverse_iterator itr= s.rbegin(); 
+        MutantStack<int>::reverse_iterator iter = s.rend();
+        while (itr != iter) {
+            std::cout << *itr<< std::endl;
+            ++itr;
+        }
     }
     return 0;
 }
