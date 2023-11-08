@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/27 16:43:01 by xuwang            #+#    #+#             */
-/*   Updated: 2021/10/28 17:59:48 by xuwang           ###   ########.fr       */
+/*   Updated: 2023/11/08 19:18:36 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,10 +64,13 @@ void Karen::complain(std::string level) {
     {
         case (0):
             (this->*_complain[i++])();
+            break;
         case (1):
             (this->*_complain[i++])();
+            break;
         case (2):
             (this->*_complain[i++])();
+            break;
         case (3):
             (this->*_complain[i++])();
             break;
